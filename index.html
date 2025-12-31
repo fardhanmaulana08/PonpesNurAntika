@@ -1,0 +1,2124 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Pondok Pesantren Nur Antika - Mencetak Generasi Qurani, Berprestasi, dan Berakhlak Mulia. Pendidikan Islam unggulan dengan integrasi ilmu pengetahuan dan nilai-nilai Qurani.">
+  <link rel="icon" href="logo.ico">
+  <title>Pondok Pesantren Nur Antika</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    :root {
+      --hijau-tua: #0F3D2E;
+      --emas: #C9A24D;
+      --emas-gelap: #A68B3C;
+      --putih: #ffffff;
+      --krem: #f9f6f0;
+      --abu-muda: #f5f5f5;
+      --abu-abu: #e8e8e8;
+      --gradient-primary: linear-gradient(135deg, #0F3D2E 0%, #1a5a42 100%);
+      --gradient-secondary: linear-gradient(135deg, #C9A24D 0%, #A68B3C 100%);
+      --gradient-accent: linear-gradient(135deg, #f9f6f0 0%, #f0ede6 100%);
+      --shadow-soft: 0 8px 32px rgba(15, 61, 46, 0.15);
+      --shadow-medium: 0 16px 48px rgba(15, 61, 46, 0.2);
+      --shadow-strong: 0 24px 64px rgba(15, 61, 46, 0.25);
+      --shadow-glow: 0 0 40px rgba(201, 162, 77, 0.5);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--krem);
+      color: var(--hijau-tua);
+      scroll-behavior: smooth;
+    }
+
+    h1,
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+    }
+
+    h3,
+    h4 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: var(--gradient-accent);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      padding: 1rem 0;
+      box-shadow: var(--shadow-soft);
+      border-bottom: 1px solid rgba(201, 162, 77, 0.1);
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      z-index: 1001;
+    }
+
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background-color: var(--hijau-tua);
+      margin: 3px 0;
+      transition: 0.3s;
+    }
+
+    .nav-links.active {
+      display: flex;
+    }
+
+    @media (max-width: 768px) {
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.95);
+        flex-direction: column;
+        padding: 1rem 0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        display: none;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links li {
+        margin: 0.5rem 0;
+        text-align: center;
+      }
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--hijau-tua);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--emas);
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background: url('hero.png') no-repeat center center/cover;
+      background-blend-mode: overlay;
+      filter: brightness(1.1) contrast(1.05) saturate(1.1);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--putih);
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(15, 61, 46, 0.7) 0%, rgba(26, 90, 66, 0.5) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      padding: 0 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      font-weight: 300;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 0.75rem 2rem;
+      background: linear-gradient(135deg, var(--emas), var(--emas-gelap));
+      color: var(--hijau-tua);
+      font-weight: 600;
+      border-radius: 4px;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .cta-button:hover {
+      background: linear-gradient(135deg, #b89242, var(--emas-gelap));
+      transform: translateY(-2px);
+    }
+
+    /* Section Styling */
+    section {
+      padding: 5rem 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+      font-size: 2.5rem;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--emas), var(--emas-gelap));
+      margin: 0.5rem auto;
+    }
+
+    /* Keunggulan */
+    .keunggulan-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .keunggulan-card {
+      background: linear-gradient(135deg, var(--putih) 0%, #faf9f6 100%);
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: var(--shadow-soft);
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .keunggulan-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    .keunggulan-icon {
+      font-size: 2.5rem;
+      color: var(--emas);
+      margin-bottom: 1.5rem;
+    }
+
+    .keunggulan-card h3 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    /* Sambutan */
+    .sambutan {
+      display: flex;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .sambutan img {
+      width: 250px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .sambutan-content h3 {
+      margin-bottom: 1.5rem;
+    }
+
+    .read-more {
+      display: inline-block;
+      margin-top: 1rem;
+      color: var(--emas);
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .read-more:hover {
+      color: var(--hijau-tua);
+    }
+
+    /* Jenjang Pendidikan */
+    .jenjang-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .jenjang-card {
+      background: linear-gradient(135deg, var(--putih) 0%, #faf9f6 100%);
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      border-top: 4px solid var(--emas);
+    }
+
+    .jenjang-card h3 {
+      margin-bottom: 1rem;
+      color: var(--hijau-tua);
+    }
+
+    .jenjang-card ul {
+      padding-left: 1.5rem;
+      margin: 1rem 0;
+    }
+
+    .jenjang-card li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Profil */
+    .profil-content {
+      background: linear-gradient(135deg, var(--putih) 0%, #faf9f6 100%);
+      padding: 2.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .profil-content h3 {
+      margin: 1.5rem 0 1rem;
+      color: var(--hijau-tua);
+    }
+
+    .profil-content p {
+      margin-bottom: 1rem;
+      line-height: 1.7;
+    }
+
+    /* Fasilitas */
+    .fasilitas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .fasilitas-card {
+      background: linear-gradient(135deg, var(--putih) 0%, #faf9f6 100%);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .fasilitas-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .fasilitas-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .fasilitas-info {
+      padding: 1.5rem;
+    }
+
+    .fasilitas-info h3 {
+      margin-bottom: 0.75rem;
+      color: var(--hijau-tua);
+    }
+
+    /* Dewan Guru */
+    .guru-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+    }
+
+    .guru-card {
+      text-align: center;
+    }
+
+    .guru-card img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid var(--emas);
+      margin-bottom: 1rem;
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .guru-card:hover img {
+      transform: scale(1.05) rotate(2deg);
+    }
+
+    .guru-card h4 {
+      margin-bottom: 0.25rem;
+    }
+
+    .guru-card p {
+      color: var(--emas);
+      font-weight: 500;
+    }
+
+    /* Pendaftaran */
+    .pendaftaran-content {
+      background: linear-gradient(135deg, var(--putih) 0%, #faf9f6 100%);
+      padding: 2.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .pendaftaran-tabs {
+      display: flex;
+      margin-bottom: 2rem;
+      border-bottom: 2px solid var(--abu-abu);
+    }
+
+    .pendaftaran-tab {
+      padding: 1rem 2rem;
+      background: none;
+      border: none;
+      font-weight: 600;
+      color: var(--hijau-tua);
+      cursor: pointer;
+      transition: color 0.3s, border-bottom 0.3s;
+      border-bottom: 3px solid transparent;
+    }
+
+    .pendaftaran-tab.active {
+      color: var(--emas);
+      border-bottom-color: var(--emas);
+    }
+
+    .pendaftaran-tab-content {
+      display: none;
+    }
+
+    .pendaftaran-tab-content.active {
+      display: block;
+    }
+
+    .alur-steps {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .alur-step {
+      flex: 1;
+      min-width: 200px;
+      background: var(--putih);
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      position: relative;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .alur-step:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    .alur-step::before {
+      content: attr(data-step);
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--emas);
+      color: var(--hijau-tua);
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .alur-step h4 {
+      margin-bottom: 1rem;
+      color: var(--hijau-tua);
+    }
+
+    .persyaratan-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .persyaratan-item {
+      background: var(--putih);
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .persyaratan-icon {
+      font-size: 1.5rem;
+      color: var(--emas);
+    }
+
+    .brosur-section {
+      text-align: center;
+      margin: 2rem 0;
+      padding: 2rem;
+      background: linear-gradient(135deg, var(--emas) 0%, var(--emas-gelap) 100%);
+      color: var(--putih);
+      border-radius: 8px;
+    }
+
+    .brosur-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .brosur-download {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background: var(--putih);
+      color: var(--emas);
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 4px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .brosur-download:hover {
+      background: var(--hijau-tua);
+      color: var(--putih);
+    }
+
+    .pendaftaran-form {
+      background: var(--putih);
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      margin-top: 2rem;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-row .form-group {
+      flex: 1;
+    }
+
+    .whatsapp-button {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      background-color: #25D366;
+      color: white;
+      font-weight: 600;
+      border-radius: 4px;
+      margin-top: 1.5rem;
+      transition: background-color 0.3s;
+      text-decoration: none;
+    }
+
+    .whatsapp-button:hover {
+      background-color: #128C7E;
+    }
+
+    .pendaftaran-content ol,
+    .pendaftaran-content ul {
+      padding-left: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .pendaftaran-content li {
+      margin-bottom: 0.75rem;
+      line-height: 1.6;
+    }
+
+    /* FAQ */
+    .faq-item {
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, var(--putih) 0%, #faf9f6 100%);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .faq-item summary {
+      padding: 1.25rem 1.5rem;
+      font-weight: 600;
+      cursor: pointer;
+      outline: none;
+      background-color: var(--abu-muda);
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .faq-item[open] summary {
+      background-color: var(--hijau-tua);
+      color: var(--putih);
+    }
+
+    .faq-item div {
+      padding: 1.5rem;
+      line-height: 1.7;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--hijau-tua);
+      color: var(--putih);
+      padding: 3rem 0 1.5rem;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-section {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .footer-section h3 {
+      margin-bottom: 1.5rem;
+      color: var(--emas);
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-section ul li a {
+      transition: color 0.3s;
+    }
+
+    .footer-section ul li a:hover {
+      color: var(--emas);
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* Testimonials */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .testimonial-card {
+      background: linear-gradient(135deg, var(--putih) 0%, #faf9f6 100%);
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      position: relative;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: 1rem;
+      left: 1.5rem;
+      font-size: 4rem;
+      color: var(--emas);
+      opacity: 0.3;
+      font-family: serif;
+    }
+
+    .testimonial-content {
+      margin-bottom: 1.5rem;
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .testimonial-author img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--emas);
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .testimonial-author:hover img {
+      transform: scale(1.05) rotate(2deg);
+    }
+
+    .testimonial-author h4 {
+      margin-bottom: 0.25rem;
+      color: var(--hijau-tua);
+    }
+
+    .testimonial-author p {
+      color: var(--emas);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    /* Feedback Form */
+    .feedback-section {
+      margin-top: 3rem;
+      text-align: center;
+    }
+
+    .feedback-section h3 {
+      margin-bottom: 2rem;
+      color: var(--hijau-tua);
+      font-size: 1.8rem;
+    }
+
+    .feedback-form {
+      background: linear-gradient(135deg, var(--putih) 0%, #faf9f6 100%);
+      padding: 2.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Contact Form */
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .contact-info h3 {
+      margin-bottom: 2rem;
+      color: var(--hijau-tua);
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      align-items: flex-start;
+    }
+
+    .contact-icon {
+      font-size: 1.5rem;
+      color: var(--emas);
+      flex-shrink: 0;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .contact-icon:hover {
+      transform: scale(1.1);
+      color: var(--hijau-tua);
+    }
+
+    .contact-item h4 {
+      margin-bottom: 0.5rem;
+      color: var(--hijau-tua);
+      font-size: 1.1rem;
+    }
+
+    .contact-item p {
+      line-height: 1.6;
+      color: var(--hijau-tua);
+    }
+
+    .contact-form {
+      background: linear-gradient(135deg, var(--putih) 0%, #faf9f6 100%);
+      padding: 2.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: var(--hijau-tua);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 2px solid #e0e0e0;
+      border-radius: 4px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      transition: border-color 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--emas);
+    }
+
+    .submit-button {
+      width: 100%;
+      padding: 1rem;
+      background-color: var(--emas);
+      color: var(--hijau-tua);
+      border: none;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .submit-button:hover {
+      background-color: #b89242;
+      transform: translateY(-2px);
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+
+      to {
+        width: 100%;
+      }
+    }
+
+    @keyframes blink {
+      50% {
+        border-color: transparent;
+      }
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.05);
+      }
+    }
+
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .animate-on-scroll.animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .slide-left {
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .slide-left.animate {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .slide-right {
+      opacity: 0;
+      transform: translateX(30px);
+      transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .slide-right.animate {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .typing-effect {
+      overflow: hidden;
+      border-right: 3px solid var(--emas);
+      white-space: nowrap;
+      animation: typing 3.5s steps(40, end), blink 0.75s step-end infinite;
+    }
+
+    .hero-content h1 {
+      animation: fadeInUp 1s ease-out 0.5s both;
+    }
+
+    .hero-content p {
+      animation: fadeInUp 1s ease-out 1s both;
+    }
+
+    .cta-button {
+      animation: fadeInUp 1s ease-out 1.5s both;
+      transition: all 0.3s ease;
+    }
+
+    .cta-button:hover {
+      animation: pulse 1s ease-in-out infinite;
+    }
+
+    .float-animation {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .pulse-animation {
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    /* Staggered animations for grids */
+    .keunggulan-grid .keunggulan-card:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    .keunggulan-grid .keunggulan-card:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .keunggulan-grid .keunggulan-card:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+
+    .keunggulan-grid .keunggulan-card:nth-child(4) {
+      animation-delay: 0.4s;
+    }
+
+    .jenjang-grid .jenjang-card:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    .jenjang-grid .jenjang-card:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .jenjang-grid .jenjang-card:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+
+    .fasilitas-grid .fasilitas-card:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    .fasilitas-grid .fasilitas-card:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .fasilitas-grid .fasilitas-card:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+
+    .fasilitas-grid .fasilitas-card:nth-child(4) {
+      animation-delay: 0.4s;
+    }
+
+    .fasilitas-grid .fasilitas-card:nth-child(5) {
+      animation-delay: 0.5s;
+    }
+
+    .fasilitas-grid .fasilitas-card:nth-child(6) {
+      animation-delay: 0.6s;
+    }
+
+    .guru-grid .guru-card:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    .guru-grid .guru-card:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .guru-grid .guru-card:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+
+    .guru-grid .guru-card:nth-child(4) {
+      animation-delay: 0.4s;
+    }
+
+    .testimonials-grid .testimonial-card:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    .testimonials-grid .testimonial-card:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .testimonials-grid .testimonial-card:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+
+    /* Loading Animation */
+    .loading {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--putih);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+
+    .loading.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 4px solid var(--abu-muda);
+      border-top: 4px solid var(--emas);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .section-title {
+        font-size: 2.25rem;
+      }
+
+      .keunggulan-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      }
+    }
+
+    @media (max-width: 768px) {
+      section {
+        padding: 3rem 0;
+      }
+
+      .hero h1 {
+        font-size: 2.25rem;
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+      }
+
+      .sambutan {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .contact-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .testimonial-author {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .contact-item {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    .kontak-ikon {
+      display: flex;
+      gap: 15px;
+      font-size: 22px;
+    }
+
+    .kontak-ikon a {
+      color: #fff9f9;
+      transition: 0.3s;
+    }
+
+    .kontak-ikon a:hover {
+      color: #0a7cff;
+    }
+
+    .wa-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+
+      width: 56px;
+      height: 56px;
+
+      background: #25d366;
+      color: white;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 28px;
+      border-radius: 50%;
+      z-index: 999;
+    }
+
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 90px;
+      left: 20px;
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, var(--emas), var(--emas-gelap));
+      color: var(--hijau-tua);
+      border: none;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 998;
+      box-shadow: var(--shadow-medium);
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-strong);
+    }
+
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <img src="logo.ico" alt="" style="width: 70px;">
+      <div class="logo">Pondok Pesantren Nur Antika</div>
+      <ul class="nav-links">
+        <li><a href="#home">Beranda</a></li>
+        <li><a href="#pendidikan">Jenjang</a></li>
+        <li><a href="#profil">Profil</a></li>
+        <li><a href="#fasilitas">Fasilitas</a></li>
+        <li><a href="#guru">Guru</a></li>
+        <li><a href="#pendaftaran">Pendaftaran</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <button class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Pondok Pesantren Nur Antika</h1>
+      <p>Membentuk Generasi Religius, Unggul, dan Berakhlak.</p>
+      <a href="#pendaftaran" class="cta-button pulse-animation">Daftar Santri Baru</a>
+    </div>
+  </section>
+
+  <!-- Keunggulan -->
+  <section>
+    <div class="container">
+      <h2 class="section-title animate-on-scroll">Keunggulan Pesantren</h2>
+      <div class="keunggulan-grid">
+        <div class="keunggulan-card animate-on-scroll">
+          <div class="keunggulan-icon float-animation">🕌</div>
+          <h3>Generasi Qur’ani Unggul</h3>
+          <p>Pendidikan terpadu yang menanamkan nilai IMTAQ dan IPTEK untuk membentuk santri religius, cerdas, dan
+            berakhlakul karimah.
+          </p>
+        </div>
+        <div class="keunggulan-card animate-on-scroll">
+          <div class="keunggulan-icon float-animation">🎓</div>
+          <h3>Pendidikan Formal SMP–SMK</h3>
+          <p>Program pendidikan berkelanjutan dari jenjang SMP hingga SMK dengan kurikulum nasional yang terintegrasi
+            nilai pesantren.</p>
+        </div>
+        <div class="keunggulan-card animate-on-scroll">
+          <div class="keunggulan-icon float-animation">🤝</div>
+          <h3>Akhlakul Karimah</h3>
+          <p>Pembinaan karakter berbasis Al-Qur’an dan Sunnah sebagai fondasi utama dalam membentuk pribadi santri yang
+            disiplin dan beradab.</p>
+        </div>
+        <div class="keunggulan-card animate-on-scroll">
+          <div class="keunggulan-icon float-animation">🌿</div>
+          <h3>Lingkungan Islami & Sosial</h3>
+          <p>Lingkungan pesantren yang kondusif, religius, dan aktif dalam kegiatan sosial untuk menumbuhkan kepedulian
+            dan jiwa pengabdian santri.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sambutan Pimpinan -->
+  <section style="background-color: var(--abu-muda);" class="slide-left">
+    <div class="container">
+      <h2 class="section-title animate-on-scroll">Pimpinan PonPes</h2>
+      <div class="sambutan animate-on-scroll">
+        <img src="abi.png" alt="Pimpinan Pondok">
+        <div class="sambutan-content">
+          <h3>Assalamu’alaikum Warahmatullahi Wabarakatuh</h3>
+          <h4>Selamat Datang di Website Resmi Pondok Pesantren Nur Antika</h4><br>
+          <p>Dengan penuh syukur dan semangat, kami mengumumkan bahwa Penerimaan Santri Baru Tahun Ajaran 2026/2027
+            telah dibuka!</p>
+          <p>Pondok Pesantren Nur Antika adalah tempat terbaik untuk mendidik generasi muda yang berakhlakul karimah,
+            cerdas, dan siap menghadapi tantangan zaman. Di sini, kami mengintegrasikan pendidikan agama dan umum dalam
+            suasana yang penuh kekeluargaan.</p>
+          <P>Mari bergabung bersama kami dan jadilah bagian dari keluarga besar Nur Antika. Mulai perjalanan indah untuk
+            menimba ilmu, membangun karakter, dan mempererat hubungan dengan Allah SWT.</P>
+          <P>Klik tombol <a href="#pendaftaran" class="read-more">Pendaftaran</a> di menu utama untuk informasi lebih
+            lanjut dan langkah Pendaftaran.</P>
+          <P>Wassalamu'alaikum warahmatullahi wabarakatuh.</P>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Jenjang Pendidikan -->
+  <section id="pendidikan" class="slide-right">
+    <div class="container">
+      <h2 class="section-title animate-on-scroll">Jenjang Pendidikan</h2>
+      <div class="jenjang-grid">
+        <div class="jenjang-card animate-on-scroll">
+          <h3>SMPIT NUR ANTIKA</h3>
+          <p>SMP Nur Antika menawarkan kurikulum yang seimbang antara mata pelajaran akademik dan pengembangan karakter.
+            Kami menyelaraskan materi pelajaran dengan standar nasional sambil menambahkan elemen-elemen inovatif untuk
+            mempersiapkan siswa menghadapi tantangan masa depan.</p><br>
+          <h4>Pembelajaran:</h4><br>
+          <p> Kami menerapkan metode pembelajaran aktif dan kolaboratif untuk mendorong partisipasi aktif siswa dalam
+            proses belajar. Guru kami berkomitmen untuk memberikan bimbingan yang tepat dan mendukung setiap langkah
+            perkembangan siswa.</p>
+        </div>
+        <div class="jenjang-card animate-on-scroll">
+          <h3>SMKIT NUR ANTIKA</h3>
+          <p>SMK Nur Antika menyediakan program pembelajaran yang berfokus pada keterampilan praktis dan pengetahuan
+            teknis yang relevan dengan berbagai industri. Kurikulum kami dirancang dengan menggabungkan pembelajaran
+            kelas dengan pelatihan praktik langsung.</p><br>
+          <h4>Program Kejuruan:</h4><br>
+          <p> Kami menawarkan beragam program kejuruan yang mencakup sektor-sektor seperti teknologi informasi,
+            otomotif, kuliner, desain grafis, dan lainnya. Setiap program dirancang untuk mempersiapkan siswa dengan
+            keterampilan yang dibutuhkan di dunia kerja.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Profil Pesantren -->
+  <section id="profil" style="background-color: var(--abu-muda);">
+    <div class="container">
+      <h2 class="section-title">Profil Pesantren</h2>
+      <div class="profil-content">
+        <h3>Sejarah Pondok</h3>
+        <p>Pondok Pesantren Nur Antika didirikan pada tahun 2012 oleh KH Encep Subandi dan Nyai Hj. Hayati Nufus,
+          seorang ulama dan pendidik yang berkomitmen untuk memberikan pendidikan yang holistik kepada generasi muda.
+          Sejak itu, pondok pesantren kami telah tumbuh menjadi pusat pembelajaran yang berpengaruh di tingkat regional.
+        </p>
+
+        <h3>Visi & Misi</h3>
+        <p><strong>Visi:</strong><br>Mencetak insan religius yang unggul dalam IMTAQ dan IPTEK, serta berakhlaqul
+          karimah.</p>
+        <p><strong>Misi:</strong></p>
+        <ul>
+          <li>Mendidik santri agar memahami dan mengamalkan Al Qur'an</li>
+          <li>Membekali santri agar menguasai IPTEK dan keterampilan lainnya sebagai bekal hidup di masyarakat</li>
+          <li>Mencetak generasi penerus dan pelurus bangsa yang tangguh, unggul, dan berkarakter</li>
+        </ul>
+
+        <h3>Program Pendidikan: </h3>
+        <p>Kami menawarkan program pendidikan dari tingkat menengah (SMP) hingga atas (SMK), dengan penekanan pada
+          pembelajaran agama, bahasa, sains, seni, dan teknologi. Para santri juga dilibatkan dalam kegiatan
+          ekstrakurikuler yang melibatkan pengembangan kreativitas, kepemimpinan, dan kemampuan sosial.</p>
+
+        <h3>Pendekatan Pendidikan: </h3>
+        <p>Pondok Pesantren Nur Antika menggabungkan pendekatan tradisional dengan metode modern. Kami menghargai
+          nilai-nilai luhur pesantren sambil mengintegrasikan teknologi dan pengetahuan kontemporer dalam proses
+          pembelajaran.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fasilitas -->
+  <section id="fasilitas">
+    <div class="container">
+      <h2 class="section-title">Fasilitas Pesantren</h2>
+      <div class="fasilitas-grid">
+        <div class="fasilitas-card">
+          <img src="mushola.png" alt="Mushola">
+          <div class="fasilitas-info">
+            <h3>Mushola</h3>
+            <p>Mushola Nur Antika menjadi pusat ibadah dan pembinaan spiritual santri dalam membentuk akhlakul karimah.
+            </p>
+          </div>
+        </div>
+        <div class="fasilitas-card">
+          <img src="asrmaptra.png" alt="AsramaPutra">
+          <div class="fasilitas-info">
+            <h3>Asrama Putra</h3>
+            <p>Asrama Putra Nur Antika merupakan tempat pembinaan dan pembiasaan hidup disiplin, mandiri, dan
+              berakhlakul karimah bagi santri dalam lingkungan pesantren yang religius dan kondusif.
+            </p>
+          </div>
+        </div>
+        <div class="fasilitas-card">
+          <img src="asrmaputri.png" alt="AsramaPutri">
+          <div class="fasilitas-info">
+            <h3>Asrama Putri</h3>
+            <p>Asrama Putri Nur Antika menjadi tempat pembinaan santri putri yang aman, nyaman, dan religius untuk
+              menumbuhkan kemandirian, kedisiplinan, serta akhlakul karimah.</p>
+          </div>
+        </div>
+        <div class="fasilitas-card">
+          <img src="kelas.png" alt="Ruang Kelas">
+          <div class="fasilitas-info">
+            <h3>Ruang Kelas</h3>
+            <p>Ruang Kelas Nur Antika merupakan sarana pembelajaran yang nyaman dan kondusif untuk mendukung proses
+              belajar santri secara efektif dan berkarakter.</p>
+          </div>
+        </div>
+        <div class="fasilitas-card">
+          <img src="lab.png" alt="Laboratorium">
+          <div class="fasilitas-info">
+            <h3>Laboratorium Komputer</h3>
+            <p>Laboratorium Komputer menjadi sarana pembelajaran teknologi untuk meningkatkan keterampilan
+              IPTEK santri secara praktis dan aplikatif.</p>
+          </div>
+        </div>
+        <div class="fasilitas-card">
+          <img src="kd.png" alt="Kantor Dinas">
+          <div class="fasilitas-info">
+            <h3>Kantor Dinas</h3>
+            <p>Kantor Dinas berfungsi sebagai pusat administrasi dan pelayanan pendidikan untuk mendukung
+              kelancaran kegiatan akademik dan kepesantrenan.</p>
+          </div>
+        </div>
+        <div class="fasilitas-card">
+          <img src="kp.png" alt="Kantor Pondok">
+          <div class="fasilitas-info">
+            <h3>Kantor Pondok</h3>
+            <p>Kantor Pondok menjadi pusat pengelolaan dan koordinasi kegiatan pesantren guna mendukung
+              pelayanan pendidikan dan pembinaan santri secara optimal.</p>
+          </div>
+        </div>
+        <div class="fasilitas-card">
+          <img src="kamarmandiputra.png" alt="KAMAR MANDI PUTRA">
+          <div class="fasilitas-info">
+            <h3>Kamar Mandi Putra</h3>
+            <p>Kamar Mandi Putra Nur Antika disediakan sebagai fasilitas kebersihan yang mendukung kenyamanan,
+              kesehatan, dan kedisiplinan santri putra dalam kehidupan pesantren.</p>
+          </div>
+        </div>
+        <div class="fasilitas-card">
+          <img src="kamarmandiputri.png" alt="KAMAR MANDI PUTRI">
+          <div class="fasilitas-info">
+            <h3>Kamar Mandi Putri</h3>
+            <p>Kamar Mandi Putri Nur Antika merupakan fasilitas kebersihan yang bersih dan nyaman untuk menunjang
+              kesehatan, kenyamanan, serta kedisiplinan santri putri.</p>
+          </div>
+        </div>
+        <div class="fasilitas-card">
+          <img src="gedungsekolah.png" alt="GEDUNG SEKOLAH ">
+          <div class="fasilitas-info">
+            <h3>Gedung Sekolah</h3>
+            <p>Gedung Sekolah Nur Antika menjadi pusat kegiatan belajar mengajar yang representatif untuk mendukung
+              pengembangan IMTAQ, IPTEK, dan karakter santri.</p>
+          </div>
+        </div>
+        <div class="fasilitas-card">
+          <img src="gedungblk.png" alt="GEDUNG BLK">
+          <div class="fasilitas-info">
+            <h3>Gedung BLK</h3>
+            <p>Gedung BLK Nur Antika merupakan sarana pelatihan keterampilan dan vokasi untuk membekali santri dengan
+              kompetensi praktis dan kesiapan kerja.</p>
+          </div>
+        </div>
+        <div class="fasilitas-card">
+          <img src="lapangan.png" alt="LAPANGAN">
+          <div class="fasilitas-info">
+            <h3>Lapangan</h3>
+            <p>Lapangan menjadi sarana aktivitas olahraga dan kegiatan bersama untuk mendukung kesehatan,
+              kebersamaan, dan pengembangan karakter santri.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dewan Guru -->
+  <section id="guru" style="background-color: var(--abu-muda);">
+    <div class="container">
+      <h2 class="section-title">Dewan Guru & Pimpinan</h2>
+      <div class="guru-grid">
+        <div class="guru-card">
+          <img src="abi.png" alt="Pimpinan">
+          <h4>ABI KH. ENCEP SUBANDI</h4>
+          <p>Pimpinan Pondok Pesantren Nur Antika </p>
+        </div>
+        <div class="guru-card">
+          <img src="umi.png" alt="Kepala SMK">
+          <h4>UMI HJ HAYATI NUPUS,M.Pd.i</h4>
+          <p>Kepala Sekolah SMKIT Nur Antika</p>
+        </div>
+        <div class="guru-card">
+          <img src="gus.png" alt="Kepala SMP">
+          <h4>GUS AHMAD IRSYAD AL FARUQ, M.Ag</h4>
+          <p>Kepala Sekolah SMPIT Nur Antika</p>
+        </div>
+        <div class="guru-card">
+          <img src="teteh.png" alt="Pengasuh Putri">
+          <h4>HJ. LULU ZAKIYATUN NUFUS, M.Ag</h4>
+          <p>Pengasuh Putri</p>
+        </div>
+        <div class="guru-card">
+          <img src="aa.png" alt="Ustadz PP Nur Antika">
+          <h4>H. IBNU ABI HATIM ARROZI S.Sos</h4>
+          <p>Ustadz PP Nur Antika</p>
+        </div>
+        <div class="guru-card">
+          <img src="pp.png" alt="Ustadzah PP Nur Antika">
+          <h4>DENIA AULIA GUSTAMI, S.H</h4>
+          <p>Ustadzah PP Nur Antika</p>
+        </div>
+        <div class="guru-card">
+          <img src="pp.png" alt="Ustadzah PP Nur Antika">
+          <h4>HJ. DIBA NAHDLIYATUNN NUFUS S.Pd</h4>
+          <p>Ustadzah PP Nur Antika</p>
+        </div>
+        <div class="guru-card">
+          <img src="pp.png" alt="Ustadzah PP Nur Antika">
+          <h4>MISRINA, S.Ag</h4>
+          <p>Ustadzah PP Nur Antika</p>
+        </div>
+        <div class="guru-card">
+          <img src="pp.png" alt="Guru  SMPIT/SMKIT Nur Antika">
+          <h4>MELANI HAYATUN NUFUS S.Pd</h4>
+          <p>Guru SMPIT/SMKIT Nur Antika</p>
+        </div>
+        <div class="guru-card">
+          <img src="pp.png" alt="Guru  SMPIT/SMKIT Nur Antika">
+          <h4>ST. SOLIHAH S.Ag</h4>
+          <p>Guru SMPIT/SMKIT Nur Antika</p>
+        </div>
+        <div class="guru-card">
+          <img src="ustusni.png" alt="Kurikulum SMPIT/SMKIT Nur Antika">
+          <h4>HUSNI SUPRIYANA, S.Pd.i</h4>
+          <p>Kurikulum SMPIT/SMKIT Nur Antika</p>
+        </div>
+        <div class="guru-card">
+          <img src="pp.png" alt="Guru SMPIT Nur Antika">
+          <h4>SRY RATNA</h4>
+          <p>Guru SMPIT Nur Antika</p>
+        </div>
+        <div class="guru-card">
+          <img src="adeni.png" alt="Guru  SMPIT/SMKIT & Ustadz Nur Antika">
+          <h4>MOCH. DENI SUPIYANI, S.H</h4>
+          <p>Guru SMPIT/SMKIT & Ustadz Nur Antika</p>
+        </div>
+        <div class="guru-card">
+          <img src="ustrais.png" alt="Guru  SMPIT/SMKIT & Ustadz Nur Antika">
+          <h4>RAIS FITRA RAMADHAN, S.H</h4>
+          <p>Guru SMPIT/SMKIT & Ustadz Nur Antika</p>
+        </div>
+        <div class="guru-card">
+          <img src="aheri.png" alt="Guru  SMPIT/SMKIT & Ustadz Nur Antika">
+          <h4>HERIYANA JAENUDIN</h4>
+          <p>Guru SMPIT/SMKIT & Ustadz Nur Antika</p>
+        </div>
+        <div class="guru-card">
+          <img src="acipto.png" alt="Guru  SMPIT & Ustadz Nur Antika">
+          <h4>CIPTO PURWO UTOMO, S.Pd</h4>
+          <p>Guru SMPIT & Ustadz Nur Antika</p>
+        </div>
+        <div class="guru-card">
+          <img src="ppco.png" alt="Ustadz Nur Antika">
+          <h4>FAHMI JUNIAWAN PADMADINATA</h4>
+          <p>Ustadz Nur Antika</p>
+        </div>
+        <div class="guru-card">
+          <img src="pp.png" alt="Ustadzah Nur Antika">
+          <h4>YULI YULIANA</h4>
+          <p>Ustadzah Nur Antika</p>
+        </div>
+        <div class="guru-card">
+          <img src="pp.png" alt="Ustadzah Nur Antika">
+          <h4>SITI SUHAIBAH, S.H</h4>
+          <p>Ustadzah Nur Antika</p>
+        </div>
+        <div class="guru-card">
+          <img src="ppco.png" alt="Ustadz Nur Antika">
+          <h4>FIRDAUS AL AYYUBI, S.Kom</h4>
+          <p>Ustadz Nur Antika</p>
+        </div>
+        <div class="guru-card">
+          <img src="aardi.jpg" alt="Ustadz Nur Antika">
+          <h4>ARDI ROHMANA, S.Kom</h4>
+          <p>Ustadz Nur Antika</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pendaftaran -->
+  <section id="pendaftaran">
+    <div class="container">
+      <h2 class="section-title">Pendaftaran Santri Baru</h2>
+      <div class="pendaftaran-content">
+        <div class="pendaftaran-tabs">
+          <button class="pendaftaran-tab" data-tab="persyaratan">Persyaratan</button><br>
+          <button class="pendaftaran-tab" data-tab="brosur">Brosur Pendaftaran</button>
+        </div>
+        <div id="persyaratan" class="pendaftaran-tab-content">
+          <h3>Persyaratan Pendaftaran</h3>
+          <div class="persyaratan-grid">
+            <div class="persyaratan-item">
+              <div class="persyaratan-icon">📄</div>
+              <div>
+                <h4>Formulir</h4>
+                <p>Mengisi formulir pendaftaran</p>
+              </div>
+            </div>
+            <div class="persyaratan-item">
+              <div class="persyaratan-icon">👨‍👩‍👧‍👦</div>
+              <div>
+                <h4>Kartu Keluarga</h4>
+                <p>Fotokopi kartu keluarga</p>
+              </div>
+            </div>
+            <div class="persyaratan-item">
+              <div class="persyaratan-icon">📊</div>
+              <div>
+                <h4>Fotokopi Raport</h4>
+                <p>Nilai terakhir raport dan biodata raport</p>
+              </div>
+            </div>
+            <div class="persyaratan-item">
+              <div class="persyaratan-icon">📸</div>
+              <div>
+                <h4>Pas Foto</h4>
+                <p>Ukuran 3x4 dan 2x3, 4 lembar</p>
+              </div>
+            </div>
+            <div class="persyaratan-item">
+              <div class="persyaratan-icon">📑</div>
+              <div>
+                <h4>Ijazah</h4>
+                <p>Fototcopy ijazah atau surat keterangan lulus</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="brosur" class="pendaftaran-tab-content">
+          <div class="brosur-section">
+            <h3>Brosur Pendaftaran Santri Baru</h3>
+            <p>Unduh brosur lengkap informasi pendaftaran santri baru tahun ajaran 2026/2027</p>
+            <img src="brosur.png" alt="Brosur Pendaftaran" class="brosur-image">
+            <a href="https://drive.google.com/file/d/1xPHqfs2yHzGWrmAPe6t7wq1nCEpglMss/view?usp=sharing" download
+              class="brosur-download">📥 Unduh Brosur (PDF)</a>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+          <h3>Jadwal Pendaftaran</h3>
+          <p>Gelombang I: November 2025 - Januari 2026<br>
+            Gelombang II: Febuari 2026 - April 2026<br>
+            Gelombang III: Mei 2026 - Juli 2026 <br>
+            (Pendaftaran ditutup jika kuota terpenuhi)</p>
+          <a href="https://wa.me/6282113463606" class="whatsapp-button">Hubungi Admin via WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="background-color: var(--abu-muda);">
+    <div class="container">
+      <h2 class="section-title">Pertanyaan Umum (FAQ)</h2>
+      <div class="faq-content">
+        <details class="faq-item">
+          <summary>Bagaimana sistem pembayaran biaya pendidikan?</summary>
+          <div>Biaya pendidikan dapat dibayarkan per semester atau per tahun. Kami juga menyediakan program beasiswa
+            prestasi dan beasiswa bagi santri kurang mampu namun berpotensi tinggi.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Apakah ada program ekstrakurikuler?</summary>
+          <div>Sangat banyak! Mulai dari tahfidz Al-Qur'an, kaligrafi, debat bahasa Arab/Inggris, robotik, olahraga,
+            seni, hingga kewirausahaan. Setiap santri wajib mengikuti minimal 2 ekstrakurikuler.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Bagaimana komunikasi orang tua dengan santri?</summary>
+          <div>Orang tua dapat mengunjungi santri pada hari kunjungan yang ditentukan. Selain itu, kami menyediakan
+            aplikasi komunikasi khusus orang tua untuk memantau perkembangan akademik dan aktivitas santri.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials">
+    <div class="container">
+      <h2 class="section-title">Testimoni Santri & Orang Tua</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <p>"Alhamdulillah, anak saya berkembang pesat di Nur Antika. Tidak hanya akademiknya yang meningkat, tapi
+              akhlaknya juga jauh lebih baik. Terima kasih atas bimbingan para ustadz dan ustadzah."</p>
+          </div>
+          <div class="testimonial-author">
+            <img src="https://placehold.co/60x60/0F3D2E/FFFFFF?text=SM" alt="Siti Maryam">
+            <div>
+              <h4>Siti Maryam</h4>
+              <p>Orang Tua Santri</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <p>"Pesantren ini benar-benar mencetak generasi Qurani. Saya berhasil hafal 5 juz dalam 2 tahun dan sekarang
+              kuliah di universitas ternama. Terima kasih Nur Antika!"</p>
+          </div>
+          <div class="testimonial-author">
+            <img src="https://placehold.co/60x60/C9A24D/0F3D2E?text=AH" alt="Ahmad Hasan">
+            <div>
+              <h4>Ahmad Hasan</h4>
+              <p>Alumni SMKIT</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <p>"Lingkungan pesantren yang sangat kondusif untuk belajar. Fasilitas lengkap, guru-guru kompeten, dan
+              program ekstrakurikuler yang beragam membuat saya betah di sini."</p>
+          </div>
+          <div class="testimonial-author">
+            <img src="https://placehold.co/60x60/0F3D2E/FFFFFF?text=FA" alt="Fatimah Azzahra">
+            <div>
+              <h4>Fatimah Azzahra</h4>
+              <p>Santri SMAIT</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feedback Form -->
+      <div class="feedback-section">
+        <h3>Beri Feedback untuk Pesantren Nur Antika</h3>
+        <form id="feedbackForm" class="feedback-form">
+          <div class="form-group">
+            <label for="feedback-name">Nama Lengkap</label>
+            <input type="text" id="feedback-name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="feedback-type">Jenis Pengguna</label>
+            <select id="feedback-type" name="type" required>
+              <option value="">Pilih Jenis</option>
+              <option value="Santri">Santri</option>
+              <option value="Orang Tua Santri">Orang Tua Santri</option>
+              <option value="Alumni">Alumni</option>
+              <option value="Lainnya">Lainnya</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="feedback-message">Pesan Feedback</label>
+            <textarea id="feedback-message" name="message" rows="4" required
+              placeholder="Tulis feedback Anda di sini..."></textarea>
+          </div>
+          <button type="submit" class="submit-button">Kirim Feedback</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Pondok Pesantren Nur Antika</h3>
+          <p>Jl. Cibalentung - Babakan, Pete, Kec. Tigaraksa, Kabupaten Tangerang, Banten 15720</p><br>
+          <div class="kontak-ikon">
+
+            <a href="tel:082113463606" title="Telepon">
+              <i class="fa-solid fa-phone"></i>
+            </a>
+
+            <a href="https://wa.me/6282113463606" target="_blank" title="WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+
+            <a href="https://www.facebook.com/ponpes.nurantika.5?mibextid=ZbWKwL" target="_blank" title="Facebook">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+
+            <a href="https://www.instagram.com/ponpes_nurantika" target="_blank" title="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="https://www.youtube.com/@pondokpesantrennurantika2489/featured" target="_blank" title="YouTube">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+
+            <a href="https://www.tiktok.com/@official_nurantika" target="_blank" title="TikTok">
+              <i class="fa-brands fa-tiktok"></i>
+            </a>
+
+          </div>
+
+        </div>
+        <div class="footer-section">
+          <h3>Link Cepat</h3>
+          <ul>
+            <li><a href="#home">Beranda</a></li>
+            <li><a href="#pendidikan">Jenjang Pendidikan</a></li>
+            <li><a href="#profil">Profil Pesantren</a></li>
+            <li><a href="#fasilitas">Fasilitas</a></li>
+            <li><a href="#pendaftaran">Pendaftaran</a></li>
+          </ul>
+        </div>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d833.7591514458081!2d106.46097355334292!3d-6.2572414794645965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e42069253ce9af1%3A0xf46adb6b44a0ddbf!2sPondok%20Pesantren%20Nur%20Antika!5e0!3m2!1sid!2sid!4v1767167537180!5m2!1sid!2sid"
+            width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+      </div>
+      <div class="copyright">
+        &copy; 2025 Pondok Pesantren Nur Antika. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Loading Screen -->
+  <div class="loading">
+    <div class="spinner"></div>
+  </div>
+
+  <script>
+    // Hamburger menu toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Close menu when clicking on a link
+    navLinks.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') {
+        navLinks.classList.remove('active');
+      }
+    });
+
+    // Loading animation
+    window.addEventListener('load', () => {
+      const loading = document.querySelector('.loading');
+      loading.classList.add('hidden');
+    });
+
+    // Scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+        }
+      });
+    }, observerOptions);
+
+    // Observe elements for animation
+    document.querySelectorAll('.animate-on-scroll, .slide-left, .slide-right').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Tab functionality for pendaftaran section
+    const pendaftaranTabs = document.querySelectorAll('.pendaftaran-tab');
+    const pendaftaranContents = document.querySelectorAll('.pendaftaran-tab-content');
+
+    pendaftaranTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Remove active class from all tabs
+        pendaftaranTabs.forEach(t => t.classList.remove('active'));
+        // Add active class to clicked tab
+        tab.classList.add('active');
+
+        // Hide all tab contents
+        pendaftaranContents.forEach(content => content.classList.remove('active'));
+
+        // Show the corresponding tab content
+        const tabId = tab.getAttribute('data-tab');
+        document.getElementById(tabId).classList.add('active');
+      });
+    });
+
+    // Pendaftaran form submission
+    const pendaftaranForm = document.getElementById('pendaftaranForm');
+    pendaftaranForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Get form data
+      const formData = new FormData(this);
+      const data = Object.fromEntries(formData);
+
+      // Basic validation for required fields
+      const requiredFields = ['nama-lengkap', 'tempat-lahir', 'tanggal-lahir', 'jenis-kelamin', 'agama', 'alamat', 'no-telepon', 'nama-ayah', 'nama-ibu', 'sekolah-asal', 'kelas', 'alasan'];
+      let isValid = true;
+      let missingFields = [];
+
+      requiredFields.forEach(field => {
+        if (!data[field] || data[field].trim() === '') {
+          isValid = false;
+          missingFields.push(field);
+        }
+      });
+
+      if (!isValid) {
+        alert('Mohon lengkapi semua field yang wajib diisi: ' + missingFields.join(', '));
+        return;
+      }
+
+      // Email validation (if email field is added later)
+      // const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      // if (data.email && !emailRegex.test(data.email)) {
+      //   alert('Mohon masukkan alamat email yang valid.');
+      //   return;
+      // }
+
+      // Simulate form submission (replace with actual submission logic)
+      alert('Terima kasih! Formulir pendaftaran Anda telah dikirim. Kami akan segera menghubungi Anda untuk proses selanjutnya.');
+
+      // Reset form
+      this.reset();
+    });
+
+    // Contact form submission
+    const contactForm = document.getElementById('contactForm');
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Get form data
+      const formData = new FormData(this);
+      const data = Object.fromEntries(formData);
+
+      // Basic validation
+      if (!data.name || !data.email || !data.subject || !data.message) {
+        alert('Mohon lengkapi semua field yang wajib diisi.');
+        return;
+      }
+
+      // Email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(data.email)) {
+        alert('Mohon masukkan alamat email yang valid.');
+        return;
+      }
+
+      // Simulate form submission (replace with actual submission logic)
+      alert('Terima kasih! Pesan Anda telah dikirim. Kami akan segera menghubungi Anda.');
+
+      // Reset form
+      this.reset();
+    });
+
+    // Feedback form submission
+    const feedbackForm = document.getElementById('feedbackForm');
+    feedbackForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Get form data
+      const formData = new FormData(this);
+      const data = Object.fromEntries(formData);
+
+      // Basic validation
+      if (!data.name || !data.type || !data.message) {
+        alert('Mohon lengkapi semua field yang wajib diisi.');
+        return;
+      }
+
+      // Create new testimonial card
+      const testimonialsGrid = document.querySelector('.testimonials-grid');
+      const newTestimonial = document.createElement('div');
+      newTestimonial.className = 'testimonial-card';
+
+      // Generate placeholder image based on type
+      let placeholderText = 'FB'; // Default
+      if (data.type === 'Santri') placeholderText = 'ST';
+      else if (data.type === 'Orang Tua Santri') placeholderText = 'OT';
+      else if (data.type === 'Alumni') placeholderText = 'AL';
+
+      newTestimonial.innerHTML = `
+        <div class="testimonial-content">
+          <p>"${data.message}"</p>
+        </div>
+        <div class="testimonial-author">
+          <img src="https://placehold.co/60x60/0F3D2E/FFFFFF?text=${placeholderText}" alt="${data.name}">
+          <div>
+            <h4>${data.name}</h4>
+            <p>${data.type}</p>
+          </div>
+        </div>
+      `;
+
+      // Add animation delay
+      const existingCards = testimonialsGrid.querySelectorAll('.testimonial-card').length;
+      newTestimonial.style.animationDelay = `${(existingCards + 1) * 0.1}s`;
+
+      // Append to grid
+      testimonialsGrid.appendChild(newTestimonial);
+
+      // Success message
+      alert('Terima kasih atas feedback Anda! Testimoni telah ditambahkan.');
+
+      // Reset form
+      this.reset();
+    });
+
+    // Back to Top Button functionality
+    const backToTopButton = document.getElementById('backToTop');
+
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTopButton.classList.add('show');
+      } else {
+        backToTopButton.classList.remove('show');
+      }
+    });
+
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+  <script>
+    document.getElementById("feedbackForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const nama = document.getElementById("feedback-name").value;
+      const jenis = document.getElementById("feedback-type").value;
+      const pesan = document.getElementById("feedback-message").value;
+
+      const waMessage = `
+*FEEDBACK PESANTREN NUR ANTIKA*
+
+Nama: ${nama}
+Jenis Pengguna: ${jenis}
+
+Pesan:
+${pesan}
+  `;
+
+      const nomorAdmin = "6288214486502"; // GANTI nomor WA admin
+      const waURL = `https://wa.me/${nomorAdmin}?text=${encodeURIComponent(waMessage)}`;
+
+      window.open(waURL, "_blank");
+
+      // optional: reset form
+      document.getElementById("feedbackForm").reset();
+    });
+  </script>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/6282113463606" class="wa-float" target="_blank" title="Chat WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" title="Kembali ke Atas">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+</body>
+
+</html>
+
+</body>
+
+</html>
