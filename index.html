@@ -2,2122 +2,1805 @@
 <html lang="id">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="Pondok Pesantren Nur Antika - Mencetak Generasi Qurani, Berprestasi, dan Berakhlak Mulia. Pendidikan Islam unggulan dengan integrasi ilmu pengetahuan dan nilai-nilai Qurani.">
-  <link rel="icon" href="logo.ico">
-  <title>Pondok Pesantren Nur Antika</title>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-  <style>
-    :root {
-      --hijau-tua: #0F3D2E;
-      --emas: #C9A24D;
-      --emas-gelap: #A68B3C;
-      --putih: #ffffff;
-      --krem: #f9f6f0;
-      --abu-muda: #f5f5f5;
-      --abu-abu: #e8e8e8;
-      --gradient-primary: linear-gradient(135deg, #0F3D2E 0%, #1a5a42 100%);
-      --gradient-secondary: linear-gradient(135deg, #C9A24D 0%, #A68B3C 100%);
-      --gradient-accent: linear-gradient(135deg, #f9f6f0 0%, #f0ede6 100%);
-      --shadow-soft: 0 8px 32px rgba(15, 61, 46, 0.15);
-      --shadow-medium: 0 16px 48px rgba(15, 61, 46, 0.2);
-      --shadow-strong: 0 24px 64px rgba(15, 61, 46, 0.25);
-      --shadow-glow: 0 0 40px rgba(201, 162, 77, 0.5);
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: var(--krem);
-      color: var(--hijau-tua);
-      scroll-behavior: smooth;
-    }
-
-    h1,
-    h2 {
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
-    }
-
-    h3,
-    h4 {
-      font-family: 'Playfair Display', serif;
-      font-weight: 600;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    /* Header */
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: var(--gradient-accent);
-      backdrop-filter: blur(10px);
-      z-index: 1000;
-      padding: 1rem 0;
-      box-shadow: var(--shadow-soft);
-      border-bottom: 1px solid rgba(201, 162, 77, 0.1);
-    }
-
-    .header-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 0.5rem;
-      z-index: 1001;
-    }
-
-    .hamburger span {
-      width: 25px;
-      height: 3px;
-      background-color: var(--hijau-tua);
-      margin: 3px 0;
-      transition: 0.3s;
-    }
-
-    .nav-links.active {
-      display: flex;
-    }
-
-    @media (max-width: 768px) {
-      .hamburger {
-        display: flex;
-      }
-
-      .nav-links {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: rgba(255, 255, 255, 0.95);
-        flex-direction: column;
-        padding: 1rem 0;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        display: none;
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-
-      .nav-links li {
-        margin: 0.5rem 0;
-        text-align: center;
-      }
-    }
-
-    .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: var(--hijau-tua);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1.5rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    .nav-links a:hover {
-      color: var(--emas);
-    }
-
-    /* Hero Section */
-    .hero {
-      height: 100vh;
-      background: url('hero.png') no-repeat center center/cover;
-      background-blend-mode: overlay;
-      filter: brightness(1.1) contrast(1.05) saturate(1.1);
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: var(--putih);
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, rgba(15, 61, 46, 0.7) 0%, rgba(26, 90, 66, 0.5) 100%);
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 800px;
-      padding: 0 1.5rem;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      line-height: 1.3;
-    }
-
-    .hero p {
-      font-size: 1.25rem;
-      margin-bottom: 2rem;
-      font-weight: 300;
-    }
-
-    .cta-button {
-      display: inline-block;
-      padding: 0.75rem 2rem;
-      background: linear-gradient(135deg, var(--emas), var(--emas-gelap));
-      color: var(--hijau-tua);
-      font-weight: 600;
-      border-radius: 4px;
-      transition: background 0.3s, transform 0.2s;
-    }
-
-    .cta-button:hover {
-      background: linear-gradient(135deg, #b89242, var(--emas-gelap));
-      transform: translateY(-2px);
-    }
-
-    /* Section Styling */
-    section {
-      padding: 5rem 0;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 3rem;
-      font-size: 2.5rem;
-      position: relative;
-    }
-
-    .section-title::after {
-      content: '';
-      display: block;
-      width: 80px;
-      height: 4px;
-      background: linear-gradient(90deg, var(--emas), var(--emas-gelap));
-      margin: 0.5rem auto;
-    }
-
-    /* Keunggulan */
-    .keunggulan-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-
-    .keunggulan-card {
-      background: linear-gradient(135deg, var(--putih) 0%, #faf9f6 100%);
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: var(--shadow-soft);
-      text-align: center;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .keunggulan-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-    }
-
-    .keunggulan-icon {
-      font-size: 2.5rem;
-      color: var(--emas);
-      margin-bottom: 1.5rem;
-    }
-
-    .keunggulan-card h3 {
-      margin-bottom: 1rem;
-      font-size: 1.5rem;
-    }
-
-    /* Sambutan */
-    .sambutan {
-      display: flex;
-      gap: 3rem;
-      align-items: center;
-    }
-
-    .sambutan img {
-      width: 250px;
-      height: 300px;
-      object-fit: cover;
-      border-radius: 8px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-    }
-
-    .sambutan-content h3 {
-      margin-bottom: 1.5rem;
-    }
-
-    .read-more {
-      display: inline-block;
-      margin-top: 1rem;
-      color: var(--emas);
-      font-weight: 600;
-      transition: color 0.3s;
-    }
-
-    .read-more:hover {
-      color: var(--hijau-tua);
-    }
-
-    /* Jenjang Pendidikan */
-    .jenjang-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2.5rem;
-    }
-
-    .jenjang-card {
-      background: linear-gradient(135deg, var(--putih) 0%, #faf9f6 100%);
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-      border-top: 4px solid var(--emas);
-    }
-
-    .jenjang-card h3 {
-      margin-bottom: 1rem;
-      color: var(--hijau-tua);
-    }
-
-    .jenjang-card ul {
-      padding-left: 1.5rem;
-      margin: 1rem 0;
-    }
-
-    .jenjang-card li {
-      margin-bottom: 0.5rem;
-    }
-
-    /* Profil */
-    .profil-content {
-      background: linear-gradient(135deg, var(--putih) 0%, #faf9f6 100%);
-      padding: 2.5rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    }
-
-    .profil-content h3 {
-      margin: 1.5rem 0 1rem;
-      color: var(--hijau-tua);
-    }
-
-    .profil-content p {
-      margin-bottom: 1rem;
-      line-height: 1.7;
-    }
-
-    /* Fasilitas */
-    .fasilitas-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-    }
-
-    .fasilitas-card {
-      background: linear-gradient(135deg, var(--putih) 0%, #faf9f6 100%);
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    }
-
-    .fasilitas-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-
-    .fasilitas-card:hover img {
-      transform: scale(1.05);
-    }
-
-    .fasilitas-info {
-      padding: 1.5rem;
-    }
-
-    .fasilitas-info h3 {
-      margin-bottom: 0.75rem;
-      color: var(--hijau-tua);
-    }
-
-    /* Dewan Guru */
-    .guru-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 2rem;
-    }
-
-    .guru-card {
-      text-align: center;
-    }
-
-    .guru-card img {
-      width: 180px;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 4px solid var(--emas);
-      margin-bottom: 1rem;
-      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-
-    .guru-card:hover img {
-      transform: scale(1.05) rotate(2deg);
-    }
-
-    .guru-card h4 {
-      margin-bottom: 0.25rem;
-    }
-
-    .guru-card p {
-      color: var(--emas);
-      font-weight: 500;
-    }
-
-    /* Pendaftaran */
-    .pendaftaran-content {
-      background: linear-gradient(135deg, var(--putih) 0%, #faf9f6 100%);
-      padding: 2.5rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    }
-
-    .pendaftaran-tabs {
-      display: flex;
-      margin-bottom: 2rem;
-      border-bottom: 2px solid var(--abu-abu);
-    }
-
-    .pendaftaran-tab {
-      padding: 1rem 2rem;
-      background: none;
-      border: none;
-      font-weight: 600;
-      color: var(--hijau-tua);
-      cursor: pointer;
-      transition: color 0.3s, border-bottom 0.3s;
-      border-bottom: 3px solid transparent;
-    }
-
-    .pendaftaran-tab.active {
-      color: var(--emas);
-      border-bottom-color: var(--emas);
-    }
-
-    .pendaftaran-tab-content {
-      display: none;
-    }
-
-    .pendaftaran-tab-content.active {
-      display: block;
-    }
-
-    .alur-steps {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin: 2rem 0;
-    }
-
-    .alur-step {
-      flex: 1;
-      min-width: 200px;
-      background: var(--putih);
-      padding: 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-      text-align: center;
-      position: relative;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .alur-step:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
-    }
-
-    .alur-step::before {
-      content: attr(data-step);
-      position: absolute;
-      top: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--emas);
-      color: var(--hijau-tua);
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      font-size: 1.1rem;
-    }
-
-    .alur-step h4 {
-      margin-bottom: 1rem;
-      color: var(--hijau-tua);
-    }
-
-    .persyaratan-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-      margin: 2rem 0;
-    }
-
-    .persyaratan-item {
-      background: var(--putih);
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .persyaratan-icon {
-      font-size: 1.5rem;
-      color: var(--emas);
-    }
-
-    .brosur-section {
-      text-align: center;
-      margin: 2rem 0;
-      padding: 2rem;
-      background: linear-gradient(135deg, var(--emas) 0%, var(--emas-gelap) 100%);
-      color: var(--putih);
-      border-radius: 8px;
-    }
-
-    .brosur-image {
-      max-width: 100%;
-      height: auto;
-      border-radius: 8px;
-      margin-bottom: 1rem;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    }
-
-    .brosur-download {
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
-      background: var(--putih);
-      color: var(--emas);
-      text-decoration: none;
-      font-weight: 600;
-      border-radius: 4px;
-      transition: background 0.3s, color 0.3s;
-    }
-
-    .brosur-download:hover {
-      background: var(--hijau-tua);
-      color: var(--putih);
-    }
-
-    .pendaftaran-form {
-      background: var(--putih);
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-      margin-top: 2rem;
-    }
-
-    .form-row {
-      display: flex;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .form-row .form-group {
-      flex: 1;
-    }
-
-    .whatsapp-button {
-      display: inline-block;
-      padding: 1rem 2.5rem;
-      background-color: #25D366;
-      color: white;
-      font-weight: 600;
-      border-radius: 4px;
-      margin-top: 1.5rem;
-      transition: background-color 0.3s;
-      text-decoration: none;
-    }
-
-    .whatsapp-button:hover {
-      background-color: #128C7E;
-    }
-
-    .pendaftaran-content ol,
-    .pendaftaran-content ul {
-      padding-left: 1.5rem;
-      margin: 1.5rem 0;
-    }
-
-    .pendaftaran-content li {
-      margin-bottom: 0.75rem;
-      line-height: 1.6;
-    }
-
-    /* FAQ */
-    .faq-item {
-      margin-bottom: 1.5rem;
-      background: linear-gradient(135deg, var(--putih) 0%, #faf9f6 100%);
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-    }
-
-    .faq-item summary {
-      padding: 1.25rem 1.5rem;
-      font-weight: 600;
-      cursor: pointer;
-      outline: none;
-      background-color: var(--abu-muda);
-      border-bottom: 1px solid #e0e0e0;
-    }
-
-    .faq-item[open] summary {
-      background-color: var(--hijau-tua);
-      color: var(--putih);
-    }
-
-    .faq-item div {
-      padding: 1.5rem;
-      line-height: 1.7;
-    }
-
-    /* Footer */
-    footer {
-      background-color: var(--hijau-tua);
-      color: var(--putih);
-      padding: 3rem 0 1.5rem;
-    }
-
-    .footer-content {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    .footer-section {
-      flex: 1;
-      min-width: 250px;
-    }
-
-    .footer-section h3 {
-      margin-bottom: 1.5rem;
-      color: var(--emas);
-    }
-
-    .footer-section ul {
-      list-style: none;
-    }
-
-    .footer-section ul li {
-      margin-bottom: 0.75rem;
-    }
-
-    .footer-section ul li a {
-      transition: color 0.3s;
-    }
-
-    .footer-section ul li a:hover {
-      color: var(--emas);
-    }
-
-    .copyright {
-      text-align: center;
-      padding-top: 1.5rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.7);
-    }
-
-    /* Testimonials */
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-
-    .testimonial-card {
-      background: linear-gradient(135deg, var(--putih) 0%, #faf9f6 100%);
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-      position: relative;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .testimonial-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-    }
-
-    .testimonial-card::before {
-      content: '"';
-      position: absolute;
-      top: 1rem;
-      left: 1.5rem;
-      font-size: 4rem;
-      color: var(--emas);
-      opacity: 0.3;
-      font-family: serif;
-    }
-
-    .testimonial-content {
-      margin-bottom: 1.5rem;
-      font-style: italic;
-      line-height: 1.6;
-    }
-
-    .testimonial-author {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .testimonial-author img {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid var(--emas);
-      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-
-    .testimonial-author:hover img {
-      transform: scale(1.05) rotate(2deg);
-    }
-
-    .testimonial-author h4 {
-      margin-bottom: 0.25rem;
-      color: var(--hijau-tua);
-    }
-
-    .testimonial-author p {
-      color: var(--emas);
-      font-size: 0.9rem;
-      font-weight: 500;
-    }
-
-    /* Feedback Form */
-    .feedback-section {
-      margin-top: 3rem;
-      text-align: center;
-    }
-
-    .feedback-section h3 {
-      margin-bottom: 2rem;
-      color: var(--hijau-tua);
-      font-size: 1.8rem;
-    }
-
-    .feedback-form {
-      background: linear-gradient(135deg, var(--putih) 0%, #faf9f6 100%);
-      padding: 2.5rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    /* Contact Form */
-    .contact-container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: start;
-    }
-
-    .contact-info h3 {
-      margin-bottom: 2rem;
-      color: var(--hijau-tua);
-    }
-
-    .contact-item {
-      display: flex;
-      gap: 1rem;
-      margin-bottom: 2rem;
-      align-items: flex-start;
-    }
-
-    .contact-icon {
-      font-size: 1.5rem;
-      color: var(--emas);
-      flex-shrink: 0;
-      transition: transform 0.3s ease, color 0.3s ease;
-    }
-
-    .contact-icon:hover {
-      transform: scale(1.1);
-      color: var(--hijau-tua);
-    }
-
-    .contact-item h4 {
-      margin-bottom: 0.5rem;
-      color: var(--hijau-tua);
-      font-size: 1.1rem;
-    }
-
-    .contact-item p {
-      line-height: 1.6;
-      color: var(--hijau-tua);
-    }
-
-    .contact-form {
-      background: linear-gradient(135deg, var(--putih) 0%, #faf9f6 100%);
-      padding: 2.5rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    }
-
-    .form-group {
-      margin-bottom: 1.5rem;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 0.5rem;
-      font-weight: 600;
-      color: var(--hijau-tua);
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      padding: 0.75rem;
-      border: 2px solid #e0e0e0;
-      border-radius: 4px;
-      font-family: 'Poppins', sans-serif;
-      font-size: 1rem;
-      transition: border-color 0.3s;
-    }
-
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: var(--emas);
-    }
-
-    .submit-button {
-      width: 100%;
-      padding: 1rem;
-      background-color: var(--emas);
-      color: var(--hijau-tua);
-      border: none;
-      border-radius: 4px;
-      font-weight: 600;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background-color 0.3s, transform 0.2s;
-    }
-
-    .submit-button:hover {
-      background-color: #b89242;
-      transform: translateY(-2px);
-    }
-
-    /* Animations */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes slideInLeft {
-      from {
-        opacity: 0;
-        transform: translateX(-30px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-
-    @keyframes slideInRight {
-      from {
-        opacity: 0;
-        transform: translateX(30px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-
-    @keyframes typing {
-      from {
-        width: 0;
-      }
-
-      to {
-        width: 100%;
-      }
-    }
-
-    @keyframes blink {
-      50% {
-        border-color: transparent;
-      }
-    }
-
-    @keyframes float {
-
-      0%,
-      100% {
-        transform: translateY(0px);
-      }
-
-      50% {
-        transform: translateY(-10px);
-      }
-    }
-
-    @keyframes pulse {
-
-      0%,
-      100% {
-        transform: scale(1);
-      }
-
-      50% {
-        transform: scale(1.05);
-      }
-    }
-
-    .animate-on-scroll {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-
-    .animate-on-scroll.animate {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .slide-left {
-      opacity: 0;
-      transform: translateX(-30px);
-      transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-
-    .slide-left.animate {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    .slide-right {
-      opacity: 0;
-      transform: translateX(30px);
-      transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-
-    .slide-right.animate {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    .typing-effect {
-      overflow: hidden;
-      border-right: 3px solid var(--emas);
-      white-space: nowrap;
-      animation: typing 3.5s steps(40, end), blink 0.75s step-end infinite;
-    }
-
-    .hero-content h1 {
-      animation: fadeInUp 1s ease-out 0.5s both;
-    }
-
-    .hero-content p {
-      animation: fadeInUp 1s ease-out 1s both;
-    }
-
-    .cta-button {
-      animation: fadeInUp 1s ease-out 1.5s both;
-      transition: all 0.3s ease;
-    }
-
-    .cta-button:hover {
-      animation: pulse 1s ease-in-out infinite;
-    }
-
-    .float-animation {
-      animation: float 3s ease-in-out infinite;
-    }
-
-    .pulse-animation {
-      animation: pulse 2s ease-in-out infinite;
-    }
-
-    /* Staggered animations for grids */
-    .keunggulan-grid .keunggulan-card:nth-child(1) {
-      animation-delay: 0.1s;
-    }
-
-    .keunggulan-grid .keunggulan-card:nth-child(2) {
-      animation-delay: 0.2s;
-    }
-
-    .keunggulan-grid .keunggulan-card:nth-child(3) {
-      animation-delay: 0.3s;
-    }
-
-    .keunggulan-grid .keunggulan-card:nth-child(4) {
-      animation-delay: 0.4s;
-    }
-
-    .jenjang-grid .jenjang-card:nth-child(1) {
-      animation-delay: 0.1s;
-    }
-
-    .jenjang-grid .jenjang-card:nth-child(2) {
-      animation-delay: 0.2s;
-    }
-
-    .jenjang-grid .jenjang-card:nth-child(3) {
-      animation-delay: 0.3s;
-    }
-
-    .fasilitas-grid .fasilitas-card:nth-child(1) {
-      animation-delay: 0.1s;
-    }
-
-    .fasilitas-grid .fasilitas-card:nth-child(2) {
-      animation-delay: 0.2s;
-    }
-
-    .fasilitas-grid .fasilitas-card:nth-child(3) {
-      animation-delay: 0.3s;
-    }
-
-    .fasilitas-grid .fasilitas-card:nth-child(4) {
-      animation-delay: 0.4s;
-    }
-
-    .fasilitas-grid .fasilitas-card:nth-child(5) {
-      animation-delay: 0.5s;
-    }
-
-    .fasilitas-grid .fasilitas-card:nth-child(6) {
-      animation-delay: 0.6s;
-    }
-
-    .guru-grid .guru-card:nth-child(1) {
-      animation-delay: 0.1s;
-    }
-
-    .guru-grid .guru-card:nth-child(2) {
-      animation-delay: 0.2s;
-    }
-
-    .guru-grid .guru-card:nth-child(3) {
-      animation-delay: 0.3s;
-    }
-
-    .guru-grid .guru-card:nth-child(4) {
-      animation-delay: 0.4s;
-    }
-
-    .testimonials-grid .testimonial-card:nth-child(1) {
-      animation-delay: 0.1s;
-    }
-
-    .testimonials-grid .testimonial-card:nth-child(2) {
-      animation-delay: 0.2s;
-    }
-
-    .testimonials-grid .testimonial-card:nth-child(3) {
-      animation-delay: 0.3s;
-    }
-
-    /* Loading Animation */
-    .loading {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: var(--putih);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-      transition: opacity 0.5s ease, visibility 0.5s ease;
-    }
-
-    .loading.hidden {
-      opacity: 0;
-      visibility: hidden;
-    }
-
-    .spinner {
-      width: 50px;
-      height: 50px;
-      border: 4px solid var(--abu-muda);
-      border-top: 4px solid var(--emas);
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-    }
-
-    @keyframes spin {
-      0% {
-        transform: rotate(0deg);
-      }
-
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-
-    /* Responsive */
-    @media (max-width: 1024px) {
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-
-      .section-title {
-        font-size: 2.25rem;
-      }
-
-      .keunggulan-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      }
-    }
-
-    @media (max-width: 768px) {
-      section {
-        padding: 3rem 0;
-      }
-
-      .hero h1 {
-        font-size: 2.25rem;
-      }
-
-      .hero p {
-        font-size: 1.1rem;
-      }
-
-      .sambutan {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .section-title {
-        font-size: 2rem;
-      }
-
-      .contact-container {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-
-      .testimonials-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .testimonial-author {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .contact-item {
-        flex-direction: column;
-        text-align: center;
-      }
-    }
-
-    .kontak-ikon {
-      display: flex;
-      gap: 15px;
-      font-size: 22px;
-    }
-
-    .kontak-ikon a {
-      color: #fff9f9;
-      transition: 0.3s;
-    }
-
-    .kontak-ikon a:hover {
-      color: #0a7cff;
-    }
-
-    .wa-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-
-      width: 56px;
-      height: 56px;
-
-      background: #25d366;
-      color: white;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      font-size: 28px;
-      border-radius: 50%;
-      z-index: 999;
-    }
-
-    /* Back to Top Button */
-    .back-to-top {
-      position: fixed;
-      bottom: 90px;
-      left: 20px;
-      width: 50px;
-      height: 50px;
-      background: linear-gradient(135deg, var(--emas), var(--emas-gelap));
-      color: var(--hijau-tua);
-      border: none;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      cursor: pointer;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s ease;
-      z-index: 998;
-      box-shadow: var(--shadow-medium);
-    }
-
-    .back-to-top:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-strong);
-    }
-
-    .back-to-top.show {
-      opacity: 1;
-      visibility: visible;
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Al-Mukhtar | Generation 609</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="AlMukhtar.png">
+    <style>
+        :root {
+            --dark: #0a0a0a;
+            --dark-emerald: #0d1b1e;
+            --emerald: #2e8b57;
+            --light-emerald: #4caf8a;
+            --white: #f8f9fa;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--dark);
+            color: var(--white);
+            overflow-x: hidden;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        /* Animated Gradient Background */
+        .gradient-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #0a0a0a 0%, #0d1b1e 30%, #2e8b57 70%, #4caf8a 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 25s ease infinite;
+            z-index: -1;
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Typography */
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+
+        .lead {
+            font-size: 1.3rem;
+            font-weight: 300;
+            color: #c0c0c0;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            background: rgba(46, 139, 87, 0.3);
+            color: white;
+            padding: 0.8rem 2rem;
+            border: 1px solid var(--emerald);
+            border-radius: 30px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            backdrop-filter: blur(4px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:active::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn:hover {
+            background: rgba(46, 139, 87, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background: var(--emerald);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: var(--light-emerald);
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(46, 139, 87, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background: rgba(10, 10, 10, 0.95);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--emerald);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-logo:hover {
+            color: var(--light-emerald);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--emerald);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--emerald);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .nav-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--white);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        .nav-menu.active {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            border-top: 1px solid rgba(46, 139, 87, 0.2);
+        }
+
+        .nav-toggle.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .nav-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .nav-toggle.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        /* Fade-in animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hero Section */
+        #hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            padding-top: 0;
+            padding-bottom: 0;
+            overflow: hidden;
+        }
+
+        /* Particle Background */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(76, 175, 138, 0.3);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .particle:nth-child(1) {
+            width: 4px;
+            height: 4px;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .particle:nth-child(2) {
+            width: 6px;
+            height: 6px;
+            left: 20%;
+            animation-delay: 1s;
+        }
+
+        .particle:nth-child(3) {
+            width: 3px;
+            height: 3px;
+            left: 30%;
+            animation-delay: 2s;
+        }
+
+        .particle:nth-child(4) {
+            width: 5px;
+            height: 5px;
+            left: 40%;
+            animation-delay: 3s;
+        }
+
+        .particle:nth-child(5) {
+            width: 4px;
+            height: 4px;
+            left: 50%;
+            animation-delay: 4s;
+        }
+
+        .particle:nth-child(6) {
+            width: 7px;
+            height: 7px;
+            left: 60%;
+            animation-delay: 5s;
+        }
+
+        .particle:nth-child(7) {
+            width: 3px;
+            height: 3px;
+            left: 70%;
+            animation-delay: 6s;
+        }
+
+        .particle:nth-child(8) {
+            width: 5px;
+            height: 5px;
+            left: 80%;
+            animation-delay: 7s;
+        }
+
+        .particle:nth-child(9) {
+            width: 4px;
+            height: 4px;
+            left: 90%;
+            animation-delay: 8s;
+        }
+
+        .particle:nth-child(10) {
+            width: 6px;
+            height: 6px;
+            left: 15%;
+            animation-delay: 9s;
+        }
+
+        .particle:nth-child(11) {
+            width: 3px;
+            height: 3px;
+            left: 25%;
+            animation-delay: 10s;
+        }
+
+        .particle:nth-child(12) {
+            width: 5px;
+            height: 5px;
+            left: 35%;
+            animation-delay: 11s;
+        }
+
+        .particle:nth-child(13) {
+            width: 4px;
+            height: 4px;
+            left: 45%;
+            animation-delay: 12s;
+        }
+
+        .particle:nth-child(14) {
+            width: 6px;
+            height: 6px;
+            left: 55%;
+            animation-delay: 13s;
+        }
+
+        .particle:nth-child(15) {
+            width: 3px;
+            height: 3px;
+            left: 65%;
+            animation-delay: 14s;
+        }
+
+        .particle:nth-child(16) {
+            width: 5px;
+            height: 5px;
+            left: 75%;
+            animation-delay: 15s;
+        }
+
+        .particle:nth-child(17) {
+            width: 4px;
+            height: 4px;
+            left: 85%;
+            animation-delay: 16s;
+        }
+
+        .particle:nth-child(18) {
+            width: 7px;
+            height: 7px;
+            left: 5%;
+            animation-delay: 17s;
+        }
+
+        .particle:nth-child(19) {
+            width: 3px;
+            height: 3px;
+            left: 95%;
+            animation-delay: 18s;
+        }
+
+        .particle:nth-child(20) {
+            width: 5px;
+            height: 5px;
+            left: 50%;
+            animation-delay: 19s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+        }
+
+        #hero h1 {
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        #hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            color: #c0c0c0;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        /* Slider */
+        #slider-section {
+            background: rgba(10, 10, 10, 0.7);
+        }
+
+        .slider-container {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            height: 500px;
+        }
+
+        .slide {
+            min-width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .slider-btn {
+            background: rgba(46, 139, 87, 0.4);
+            border: none;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .slider-btn:hover {
+            background: var(--emerald);
+            transform: scale(1.1);
+        }
+
+        /* Cerita Angkatan */
+        .story-card {
+            background: rgba(13, 27, 30, 0.6);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(46, 139, 87, 0.2);
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .story-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(46, 139, 87, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .story-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(46, 139, 87, 0.3);
+            border-color: var(--emerald);
+        }
+
+        .story-card:hover::before {
+            left: 100%;
+        }
+
+        .story-icon {
+            font-size: 2rem;
+            color: var(--emerald);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* Timeline */
+        #timeline {
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, var(--emerald), var(--light-emerald));
+            left: 50%;
+            margin-left: -2px;
+            border-radius: 2px;
+            box-shadow: 0 0 10px rgba(46, 139, 87, 0.5);
+        }
+
+        .timeline-item {
+            width: 50%;
+            padding: 1.5rem;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            text-align: left;
+        }
+
+        .timeline-content {
+            background: rgba(13, 27, 30, 0.7);
+            padding: 1.5rem;
+            border-radius: 10px;
+            position: relative;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(46, 139, 87, 0.2);
+        }
+
+        .timeline-content::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--emerald);
+            border-radius: 50%;
+            top: 20px;
+            box-shadow: 0 0 0 4px rgba(46, 139, 87, 0.3);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::after {
+            right: -50px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::after {
+            left: -50px;
+        }
+
+        /* Progress Bar */
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(46, 139, 87, 0.2);
+            border-radius: 4px;
+            margin: 1rem 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--emerald), var(--light-emerald));
+            width: 0%;
+            border-radius: 4px;
+            transition: width 2s ease-in-out;
+        }
+
+        .timeline-item.visible .progress-fill {
+            width: 100%;
+        }
+
+        /* Timeline Counters */
+        .timeline-counter {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--emerald);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            height: 250px;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 1;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .modal-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(46, 139, 87, 0.8);
+            border: none;
+            color: white;
+            font-size: 2rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 1001;
+        }
+
+        .modal-nav:hover {
+            background: var(--emerald);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .modal-nav.prev {
+            left: 20px;
+        }
+
+        .modal-nav.next {
+            right: 20px;
+        }
+
+        /* Quotes */
+        .quote-section {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: rgba(10, 10, 10, 0.7);
+        }
+
+        .quote {
+            font-size: 1.8rem;
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            color: #e0e0e0;
+            border-right: 2px solid var(--emerald);
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+
+        .quote-author {
+            font-size: 1.2rem;
+            color: var(--light-emerald);
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink-caret {
+
+            from,
+            to {
+                border-color: transparent;
+            }
+
+            50% {
+                border-color: var(--emerald);
+            }
+        }
+
+        /* Social Media */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(13, 27, 30, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: var(--transition);
+            border: 1px solid rgba(46, 139, 87, 0.3);
+        }
+
+        .social-link:hover {
+            background: var(--emerald);
+            transform: translateY(-3px);
+            box-shadow: 0 0 15px rgba(46, 139, 87, 0.6);
+        }
+
+        /* Penutup */
+        #penutup {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        #penutup p {
+            font-size: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            font-style: italic;
+            color: #f0f0f0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .slider {
+                height: 350px;
+            }
+
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 0;
+                text-align: left !important;
+            }
+
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+
+            .timeline-content::after {
+                left: -50px !important;
+            }
+
+            /* Progress Bar */
+            .progress-bar {
+                width: 100%;
+                height: 8px;
+                background: rgba(46, 139, 87, 0.2);
+                border-radius: 4px;
+                margin: 1rem 0;
+                overflow: hidden;
+            }
+
+            .progress-fill {
+                height: 100%;
+                background: linear-gradient(90deg, var(--emerald), var(--light-emerald));
+                width: 0%;
+                border-radius: 4px;
+                transition: width 2s ease-in-out;
+            }
+
+            .timeline-item.visible .progress-fill {
+                width: 100%;
+            }
+
+            #penutup p {
+                font-size: 1.5rem;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .quote {
+                font-size: 1.4rem;
+            }
+
+            .slider {
+                height: 280px;
+            }
+
+            .slide-card {
+                width: 200px;
+                height: 280px;
+            }
+
+            .slide-card img {
+                width: 200px;
+                height: 280px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .slide-card {
+                width: 220px;
+                height: 300px;
+            }
+
+            .slide-card img {
+                width: 220px;
+                height: 300px;
+            }
+
+            .slider-3d {
+                height: 300px;
+            }
+        }
+
+        .slider-container {
+            perspective: 1600px;
+            overflow: hidden;
+        }
+
+        .slider {
+            display: flex;
+            align-items: center;
+            transform-style: preserve-3d;
+        }
+
+        .slide-card {
+            width: 260px;
+            height: 360px;
+            background: #c00;
+            border-radius: 20px;
+            margin: 0 20px;
+            transition: transform 0.4s ease, opacity 0.4s ease;
+            transform-origin: center;
+            will-change: transform;
+        }
+
+        .slide-card img {
+            transition: transform 0.4s ease;
+        }
+
+        .slide-card:hover img {
+            transform: scale(1.05);
+        }
+
+        /* CARD AKTIF (TENGAH) */
+        .slide-card.active {
+            transform: rotateY(0deg) scale(1.05);
+            opacity: 1;
+            z-index: 5;
+            box-shadow: 0 0 30px rgba(46, 139, 87, 0.6), 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        /* KIRI & KANAN */
+        .slide-card.left {
+            transform: rotateY(15deg) scale(0.9);
+        }
+
+        .slide-card.right {
+            transform: rotateY(-15deg) scale(0.9);
+        }
+
+        .slide-card:hover {
+            transform: rotateY(0deg) scale(1.08);
+            opacity: 1;
+        }
+
+        .slide-card {
+            transform-style: preserve-3d;
+        }
+
+        .slide-card.active {
+            transform: rotateY(0deg) scale(1.1) translateZ(80px);
+        }
+
+        .slide-card.left {
+            transform: rotateY(25deg) scale(0.9) translateZ(-40px);
+        }
+
+        .slide-card.right {
+            transform: rotateY(-25deg) scale(0.9) translateZ(-40px);
+        }
+
+        .slide-card .info {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            padding: 15px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: 0.5s;
+        }
+
+        .slide-card.active .info {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .member-name {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .slider-wrapper {
+            perspective: 1200px;
+            overflow: hidden;
+        }
+
+        .slider-3d {
+            position: relative;
+            height: 360px;
+            transform-style: preserve-3d;
+            cursor: grab;
+        }
+
+        .slide-card {
+            position: absolute;
+            left: calc(50% - 130px);
+            top: 0;
+            transform-style: preserve-3d;
+            transition: transform 0.35s ease, opacity 0.35s ease;
+            opacity: 0;
+        }
+
+        .slide-card img {
+            width: 260px;
+            height: 360px;
+            border-radius: 16px;
+            object-fit: cover;
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(46, 139, 87, 0.2);
+            padding: 3rem 0 1rem;
+            color: var(--white);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .footer-logo img {
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(46, 139, 87, 0.3);
+        }
+
+        .footer-logo h3 {
+            font-size: 1.5rem;
+            color: var(--emerald);
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .footer-links h4,
+        .footer-contact h4 {
+            font-size: 1.2rem;
+            color: var(--light-emerald);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: var(--transition);
+            font-weight: 400;
+        }
+
+        .footer-links a:hover {
+            color: var(--emerald);
+            transform: translateX(5px);
+        }
+
+        .footer-contact p {
+            margin-bottom: 0.5rem;
+            color: #c0c0c0;
+            font-size: 0.95rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(46, 139, 87, 0.1);
+            padding-top: 1.5rem;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+            color: #a0a0a0;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .footer {
+                padding: 1rem 0 0.5rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            .footer-logo {
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-links,
+            .footer-contact {
+                text-align: center;
+            }
+
+            .footer-bottom {
+                padding-top: 1rem;
+            }
+
+            .social-card i {
+                font-size: 24px;
+            }
+        }
+
+        .social-grid {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .social-card {
+            background: none;
+            padding: 0;
+            border-radius: 0;
+            color: inherit;
+        }
+
+        .social-card i {
+            font-size: 28px;
+            transition: transform 0.25s ease;
+        }
+
+        /* Warna asli brand */
+        .icon-ig i {
+            color: #E4405F;
+        }
+
+        .icon-wa i {
+            color: #25D366;
+        }
+
+        .icon-yt i {
+            color: #FF0000;
+        }
+
+        .icon-tk i {
+            color: #ece5e5;
+        }
+
+        .icon-mail i {
+            color: #ebe1e1;
+        }
+
+        .social-card:hover i {
+            transform: scale(1.15);
+        }
+    </style>
 </head>
 
 <body>
+    <audio id="bg-music" loop>
+        <source src="Best Friend-Rex Orange County.mp3" type="audio/mpeg">
+    </audio>
 
-  <!-- Header -->
-  <header>
-    <div class="container header-container">
-      <img src="logo.ico" alt="" style="width: 70px;">
-      <div class="logo">Pondok Pesantren Nur Antika</div>
-      <ul class="nav-links">
-        <li><a href="#home">Beranda</a></li>
-        <li><a href="#pendidikan">Jenjang</a></li>
-        <li><a href="#profil">Profil</a></li>
-        <li><a href="#fasilitas">Fasilitas</a></li>
-        <li><a href="#guru">Guru</a></li>
-        <li><a href="#pendaftaran">Pendaftaran</a></li>
-        <li><a href="#faq">FAQ</a></li>
-      </ul>
-      <button class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  </header>
+    <div class="gradient-bg"></div>
 
-  <!-- Hero Section -->
-  <section id="home" class="hero">
-    <div class="hero-content">
-      <h1>Pondok Pesantren Nur Antika</h1>
-      <p>Membentuk Generasi Religius, Unggul, dan Berakhlak.</p>
-      <a href="#pendaftaran" class="cta-button pulse-animation">Daftar Santri Baru</a>
-    </div>
-  </section>
-
-  <!-- Keunggulan -->
-  <section>
-    <div class="container">
-      <h2 class="section-title animate-on-scroll">Keunggulan Pesantren</h2>
-      <div class="keunggulan-grid">
-        <div class="keunggulan-card animate-on-scroll">
-          <div class="keunggulan-icon float-animation">🕌</div>
-          <h3>Generasi Qur’ani Unggul</h3>
-          <p>Pendidikan terpadu yang menanamkan nilai IMTAQ dan IPTEK untuk membentuk santri religius, cerdas, dan
-            berakhlakul karimah.
-          </p>
-        </div>
-        <div class="keunggulan-card animate-on-scroll">
-          <div class="keunggulan-icon float-animation">🎓</div>
-          <h3>Pendidikan Formal SMP–SMK</h3>
-          <p>Program pendidikan berkelanjutan dari jenjang SMP hingga SMK dengan kurikulum nasional yang terintegrasi
-            nilai pesantren.</p>
-        </div>
-        <div class="keunggulan-card animate-on-scroll">
-          <div class="keunggulan-icon float-animation">🤝</div>
-          <h3>Akhlakul Karimah</h3>
-          <p>Pembinaan karakter berbasis Al-Qur’an dan Sunnah sebagai fondasi utama dalam membentuk pribadi santri yang
-            disiplin dan beradab.</p>
-        </div>
-        <div class="keunggulan-card animate-on-scroll">
-          <div class="keunggulan-icon float-animation">🌿</div>
-          <h3>Lingkungan Islami & Sosial</h3>
-          <p>Lingkungan pesantren yang kondusif, religius, dan aktif dalam kegiatan sosial untuk menumbuhkan kepedulian
-            dan jiwa pengabdian santri.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Sambutan Pimpinan -->
-  <section style="background-color: var(--abu-muda);" class="slide-left">
-    <div class="container">
-      <h2 class="section-title animate-on-scroll">Pimpinan PonPes</h2>
-      <div class="sambutan animate-on-scroll">
-        <img src="abi.png" alt="Pimpinan Pondok">
-        <div class="sambutan-content">
-          <h3>Assalamu’alaikum Warahmatullahi Wabarakatuh</h3>
-          <h4>Selamat Datang di Website Resmi Pondok Pesantren Nur Antika</h4><br>
-          <p>Dengan penuh syukur dan semangat, kami mengumumkan bahwa Penerimaan Santri Baru Tahun Ajaran 2026/2027
-            telah dibuka!</p>
-          <p>Pondok Pesantren Nur Antika adalah tempat terbaik untuk mendidik generasi muda yang berakhlakul karimah,
-            cerdas, dan siap menghadapi tantangan zaman. Di sini, kami mengintegrasikan pendidikan agama dan umum dalam
-            suasana yang penuh kekeluargaan.</p>
-          <P>Mari bergabung bersama kami dan jadilah bagian dari keluarga besar Nur Antika. Mulai perjalanan indah untuk
-            menimba ilmu, membangun karakter, dan mempererat hubungan dengan Allah SWT.</P>
-          <P>Klik tombol <a href="#pendaftaran" class="read-more">Pendaftaran</a> di menu utama untuk informasi lebih
-            lanjut dan langkah Pendaftaran.</P>
-          <P>Wassalamu'alaikum warahmatullahi wabarakatuh.</P>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Jenjang Pendidikan -->
-  <section id="pendidikan" class="slide-right">
-    <div class="container">
-      <h2 class="section-title animate-on-scroll">Jenjang Pendidikan</h2>
-      <div class="jenjang-grid">
-        <div class="jenjang-card animate-on-scroll">
-          <h3>SMPIT NUR ANTIKA</h3>
-          <p>SMP Nur Antika menawarkan kurikulum yang seimbang antara mata pelajaran akademik dan pengembangan karakter.
-            Kami menyelaraskan materi pelajaran dengan standar nasional sambil menambahkan elemen-elemen inovatif untuk
-            mempersiapkan siswa menghadapi tantangan masa depan.</p><br>
-          <h4>Pembelajaran:</h4><br>
-          <p> Kami menerapkan metode pembelajaran aktif dan kolaboratif untuk mendorong partisipasi aktif siswa dalam
-            proses belajar. Guru kami berkomitmen untuk memberikan bimbingan yang tepat dan mendukung setiap langkah
-            perkembangan siswa.</p>
-        </div>
-        <div class="jenjang-card animate-on-scroll">
-          <h3>SMKIT NUR ANTIKA</h3>
-          <p>SMK Nur Antika menyediakan program pembelajaran yang berfokus pada keterampilan praktis dan pengetahuan
-            teknis yang relevan dengan berbagai industri. Kurikulum kami dirancang dengan menggabungkan pembelajaran
-            kelas dengan pelatihan praktik langsung.</p><br>
-          <h4>Program Kejuruan:</h4><br>
-          <p> Kami menawarkan beragam program kejuruan yang mencakup sektor-sektor seperti teknologi informasi,
-            otomotif, kuliner, desain grafis, dan lainnya. Setiap program dirancang untuk mempersiapkan siswa dengan
-            keterampilan yang dibutuhkan di dunia kerja.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Profil Pesantren -->
-  <section id="profil" style="background-color: var(--abu-muda);">
-    <div class="container">
-      <h2 class="section-title">Profil Pesantren</h2>
-      <div class="profil-content">
-        <h3>Sejarah Pondok</h3>
-        <p>Pondok Pesantren Nur Antika didirikan pada tahun 2012 oleh KH Encep Subandi dan Nyai Hj. Hayati Nufus,
-          seorang ulama dan pendidik yang berkomitmen untuk memberikan pendidikan yang holistik kepada generasi muda.
-          Sejak itu, pondok pesantren kami telah tumbuh menjadi pusat pembelajaran yang berpengaruh di tingkat regional.
-        </p>
-
-        <h3>Visi & Misi</h3>
-        <p><strong>Visi:</strong><br>Mencetak insan religius yang unggul dalam IMTAQ dan IPTEK, serta berakhlaqul
-          karimah.</p>
-        <p><strong>Misi:</strong></p>
-        <ul>
-          <li>Mendidik santri agar memahami dan mengamalkan Al Qur'an</li>
-          <li>Membekali santri agar menguasai IPTEK dan keterampilan lainnya sebagai bekal hidup di masyarakat</li>
-          <li>Mencetak generasi penerus dan pelurus bangsa yang tangguh, unggul, dan berkarakter</li>
-        </ul>
-
-        <h3>Program Pendidikan: </h3>
-        <p>Kami menawarkan program pendidikan dari tingkat menengah (SMP) hingga atas (SMK), dengan penekanan pada
-          pembelajaran agama, bahasa, sains, seni, dan teknologi. Para santri juga dilibatkan dalam kegiatan
-          ekstrakurikuler yang melibatkan pengembangan kreativitas, kepemimpinan, dan kemampuan sosial.</p>
-
-        <h3>Pendekatan Pendidikan: </h3>
-        <p>Pondok Pesantren Nur Antika menggabungkan pendekatan tradisional dengan metode modern. Kami menghargai
-          nilai-nilai luhur pesantren sambil mengintegrasikan teknologi dan pengetahuan kontemporer dalam proses
-          pembelajaran.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Fasilitas -->
-  <section id="fasilitas">
-    <div class="container">
-      <h2 class="section-title">Fasilitas Pesantren</h2>
-      <div class="fasilitas-grid">
-        <div class="fasilitas-card">
-          <img src="mushola.png" alt="Mushola">
-          <div class="fasilitas-info">
-            <h3>Mushola</h3>
-            <p>Mushola Nur Antika menjadi pusat ibadah dan pembinaan spiritual santri dalam membentuk akhlakul karimah.
-            </p>
-          </div>
-        </div>
-        <div class="fasilitas-card">
-          <img src="asrmaptra.png" alt="AsramaPutra">
-          <div class="fasilitas-info">
-            <h3>Asrama Putra</h3>
-            <p>Asrama Putra Nur Antika merupakan tempat pembinaan dan pembiasaan hidup disiplin, mandiri, dan
-              berakhlakul karimah bagi santri dalam lingkungan pesantren yang religius dan kondusif.
-            </p>
-          </div>
-        </div>
-        <div class="fasilitas-card">
-          <img src="asrmaputri.png" alt="AsramaPutri">
-          <div class="fasilitas-info">
-            <h3>Asrama Putri</h3>
-            <p>Asrama Putri Nur Antika menjadi tempat pembinaan santri putri yang aman, nyaman, dan religius untuk
-              menumbuhkan kemandirian, kedisiplinan, serta akhlakul karimah.</p>
-          </div>
-        </div>
-        <div class="fasilitas-card">
-          <img src="kelas.png" alt="Ruang Kelas">
-          <div class="fasilitas-info">
-            <h3>Ruang Kelas</h3>
-            <p>Ruang Kelas Nur Antika merupakan sarana pembelajaran yang nyaman dan kondusif untuk mendukung proses
-              belajar santri secara efektif dan berkarakter.</p>
-          </div>
-        </div>
-        <div class="fasilitas-card">
-          <img src="lab.png" alt="Laboratorium">
-          <div class="fasilitas-info">
-            <h3>Laboratorium Komputer</h3>
-            <p>Laboratorium Komputer menjadi sarana pembelajaran teknologi untuk meningkatkan keterampilan
-              IPTEK santri secara praktis dan aplikatif.</p>
-          </div>
-        </div>
-        <div class="fasilitas-card">
-          <img src="kd.png" alt="Kantor Dinas">
-          <div class="fasilitas-info">
-            <h3>Kantor Dinas</h3>
-            <p>Kantor Dinas berfungsi sebagai pusat administrasi dan pelayanan pendidikan untuk mendukung
-              kelancaran kegiatan akademik dan kepesantrenan.</p>
-          </div>
-        </div>
-        <div class="fasilitas-card">
-          <img src="kp.png" alt="Kantor Pondok">
-          <div class="fasilitas-info">
-            <h3>Kantor Pondok</h3>
-            <p>Kantor Pondok menjadi pusat pengelolaan dan koordinasi kegiatan pesantren guna mendukung
-              pelayanan pendidikan dan pembinaan santri secara optimal.</p>
-          </div>
-        </div>
-        <div class="fasilitas-card">
-          <img src="kamarmandiputra.png" alt="KAMAR MANDI PUTRA">
-          <div class="fasilitas-info">
-            <h3>Kamar Mandi Putra</h3>
-            <p>Kamar Mandi Putra Nur Antika disediakan sebagai fasilitas kebersihan yang mendukung kenyamanan,
-              kesehatan, dan kedisiplinan santri putra dalam kehidupan pesantren.</p>
-          </div>
-        </div>
-        <div class="fasilitas-card">
-          <img src="kamarmandiputri.png" alt="KAMAR MANDI PUTRI">
-          <div class="fasilitas-info">
-            <h3>Kamar Mandi Putri</h3>
-            <p>Kamar Mandi Putri Nur Antika merupakan fasilitas kebersihan yang bersih dan nyaman untuk menunjang
-              kesehatan, kenyamanan, serta kedisiplinan santri putri.</p>
-          </div>
-        </div>
-        <div class="fasilitas-card">
-          <img src="gedungsekolah.png" alt="GEDUNG SEKOLAH ">
-          <div class="fasilitas-info">
-            <h3>Gedung Sekolah</h3>
-            <p>Gedung Sekolah Nur Antika menjadi pusat kegiatan belajar mengajar yang representatif untuk mendukung
-              pengembangan IMTAQ, IPTEK, dan karakter santri.</p>
-          </div>
-        </div>
-        <div class="fasilitas-card">
-          <img src="gedungblk.png" alt="GEDUNG BLK">
-          <div class="fasilitas-info">
-            <h3>Gedung BLK</h3>
-            <p>Gedung BLK Nur Antika merupakan sarana pelatihan keterampilan dan vokasi untuk membekali santri dengan
-              kompetensi praktis dan kesiapan kerja.</p>
-          </div>
-        </div>
-        <div class="fasilitas-card">
-          <img src="lapangan.png" alt="LAPANGAN">
-          <div class="fasilitas-info">
-            <h3>Lapangan</h3>
-            <p>Lapangan menjadi sarana aktivitas olahraga dan kegiatan bersama untuk mendukung kesehatan,
-              kebersamaan, dan pengembangan karakter santri.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Dewan Guru -->
-  <section id="guru" style="background-color: var(--abu-muda);">
-    <div class="container">
-      <h2 class="section-title">Dewan Guru & Pimpinan</h2>
-      <div class="guru-grid">
-        <div class="guru-card">
-          <img src="abi.png" alt="Pimpinan">
-          <h4>ABI KH. ENCEP SUBANDI</h4>
-          <p>Pimpinan Pondok Pesantren Nur Antika </p>
-        </div>
-        <div class="guru-card">
-          <img src="umi.png" alt="Kepala SMK">
-          <h4>UMI HJ HAYATI NUPUS,M.Pd.i</h4>
-          <p>Kepala Sekolah SMKIT Nur Antika</p>
-        </div>
-        <div class="guru-card">
-          <img src="gus.png" alt="Kepala SMP">
-          <h4>GUS AHMAD IRSYAD AL FARUQ, M.Ag</h4>
-          <p>Kepala Sekolah SMPIT Nur Antika</p>
-        </div>
-        <div class="guru-card">
-          <img src="teteh.png" alt="Pengasuh Putri">
-          <h4>HJ. LULU ZAKIYATUN NUFUS, M.Ag</h4>
-          <p>Pengasuh Putri</p>
-        </div>
-        <div class="guru-card">
-          <img src="aa.png" alt="Ustadz PP Nur Antika">
-          <h4>H. IBNU ABI HATIM ARROZI S.Sos</h4>
-          <p>Ustadz PP Nur Antika</p>
-        </div>
-        <div class="guru-card">
-          <img src="pp.png" alt="Ustadzah PP Nur Antika">
-          <h4>DENIA AULIA GUSTAMI, S.H</h4>
-          <p>Ustadzah PP Nur Antika</p>
-        </div>
-        <div class="guru-card">
-          <img src="pp.png" alt="Ustadzah PP Nur Antika">
-          <h4>HJ. DIBA NAHDLIYATUNN NUFUS S.Pd</h4>
-          <p>Ustadzah PP Nur Antika</p>
-        </div>
-        <div class="guru-card">
-          <img src="pp.png" alt="Ustadzah PP Nur Antika">
-          <h4>MISRINA, S.Ag</h4>
-          <p>Ustadzah PP Nur Antika</p>
-        </div>
-        <div class="guru-card">
-          <img src="pp.png" alt="Guru  SMPIT/SMKIT Nur Antika">
-          <h4>MELANI HAYATUN NUFUS S.Pd</h4>
-          <p>Guru SMPIT/SMKIT Nur Antika</p>
-        </div>
-        <div class="guru-card">
-          <img src="pp.png" alt="Guru  SMPIT/SMKIT Nur Antika">
-          <h4>ST. SOLIHAH S.Ag</h4>
-          <p>Guru SMPIT/SMKIT Nur Antika</p>
-        </div>
-        <div class="guru-card">
-          <img src="ustusni.png" alt="Kurikulum SMPIT/SMKIT Nur Antika">
-          <h4>HUSNI SUPRIYANA, S.Pd.i</h4>
-          <p>Kurikulum SMPIT/SMKIT Nur Antika</p>
-        </div>
-        <div class="guru-card">
-          <img src="pp.png" alt="Guru SMPIT Nur Antika">
-          <h4>SRY RATNA</h4>
-          <p>Guru SMPIT Nur Antika</p>
-        </div>
-        <div class="guru-card">
-          <img src="adeni.png" alt="Guru  SMPIT/SMKIT & Ustadz Nur Antika">
-          <h4>MOCH. DENI SUPIYANI, S.H</h4>
-          <p>Guru SMPIT/SMKIT & Ustadz Nur Antika</p>
-        </div>
-        <div class="guru-card">
-          <img src="ustrais.png" alt="Guru  SMPIT/SMKIT & Ustadz Nur Antika">
-          <h4>RAIS FITRA RAMADHAN, S.H</h4>
-          <p>Guru SMPIT/SMKIT & Ustadz Nur Antika</p>
-        </div>
-        <div class="guru-card">
-          <img src="aheri.png" alt="Guru  SMPIT/SMKIT & Ustadz Nur Antika">
-          <h4>HERIYANA JAENUDIN</h4>
-          <p>Guru SMPIT/SMKIT & Ustadz Nur Antika</p>
-        </div>
-        <div class="guru-card">
-          <img src="acipto.png" alt="Guru  SMPIT & Ustadz Nur Antika">
-          <h4>CIPTO PURWO UTOMO, S.Pd</h4>
-          <p>Guru SMPIT & Ustadz Nur Antika</p>
-        </div>
-        <div class="guru-card">
-          <img src="ppco.png" alt="Ustadz Nur Antika">
-          <h4>FAHMI JUNIAWAN PADMADINATA</h4>
-          <p>Ustadz Nur Antika</p>
-        </div>
-        <div class="guru-card">
-          <img src="pp.png" alt="Ustadzah Nur Antika">
-          <h4>YULI YULIANA</h4>
-          <p>Ustadzah Nur Antika</p>
-        </div>
-        <div class="guru-card">
-          <img src="pp.png" alt="Ustadzah Nur Antika">
-          <h4>SITI SUHAIBAH, S.H</h4>
-          <p>Ustadzah Nur Antika</p>
-        </div>
-        <div class="guru-card">
-          <img src="ppco.png" alt="Ustadz Nur Antika">
-          <h4>FIRDAUS AL AYYUBI, S.Kom</h4>
-          <p>Ustadz Nur Antika</p>
-        </div>
-        <div class="guru-card">
-          <img src="aardi.jpg" alt="Ustadz Nur Antika">
-          <h4>ARDI ROHMANA, S.Kom</h4>
-          <p>Ustadz Nur Antika</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Pendaftaran -->
-  <section id="pendaftaran">
-    <div class="container">
-      <h2 class="section-title">Pendaftaran Santri Baru</h2>
-      <div class="pendaftaran-content">
-        <div class="pendaftaran-tabs">
-          <button class="pendaftaran-tab" data-tab="persyaratan">Persyaratan</button><br>
-          <button class="pendaftaran-tab" data-tab="brosur">Brosur Pendaftaran</button>
-        </div>
-        <div id="persyaratan" class="pendaftaran-tab-content">
-          <h3>Persyaratan Pendaftaran</h3>
-          <div class="persyaratan-grid">
-            <div class="persyaratan-item">
-              <div class="persyaratan-icon">📄</div>
-              <div>
-                <h4>Formulir</h4>
-                <p>Mengisi formulir pendaftaran</p>
-              </div>
-            </div>
-            <div class="persyaratan-item">
-              <div class="persyaratan-icon">👨‍👩‍👧‍👦</div>
-              <div>
-                <h4>Kartu Keluarga</h4>
-                <p>Fotokopi kartu keluarga</p>
-              </div>
-            </div>
-            <div class="persyaratan-item">
-              <div class="persyaratan-icon">📊</div>
-              <div>
-                <h4>Fotokopi Raport</h4>
-                <p>Nilai terakhir raport dan biodata raport</p>
-              </div>
-            </div>
-            <div class="persyaratan-item">
-              <div class="persyaratan-icon">📸</div>
-              <div>
-                <h4>Pas Foto</h4>
-                <p>Ukuran 3x4 dan 2x3, 4 lembar</p>
-              </div>
-            </div>
-            <div class="persyaratan-item">
-              <div class="persyaratan-icon">📑</div>
-              <div>
-                <h4>Ijazah</h4>
-                <p>Fototcopy ijazah atau surat keterangan lulus</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div id="brosur" class="pendaftaran-tab-content">
-          <div class="brosur-section">
-            <h3>Brosur Pendaftaran Santri Baru</h3>
-            <p>Unduh brosur lengkap informasi pendaftaran santri baru tahun ajaran 2026/2027</p>
-            <img src="brosur.png" alt="Brosur Pendaftaran" class="brosur-image">
-            <a href="https://drive.google.com/file/d/1xPHqfs2yHzGWrmAPe6t7wq1nCEpglMss/view?usp=sharing" download
-              class="brosur-download">📥 Unduh Brosur (PDF)</a>
-          </div>
-        </div>
-
-        <div style="text-align: center; margin-top: 2rem;">
-          <h3>Jadwal Pendaftaran</h3>
-          <p>Gelombang I: November 2025 - Januari 2026<br>
-            Gelombang II: Febuari 2026 - April 2026<br>
-            Gelombang III: Mei 2026 - Juli 2026 <br>
-            (Pendaftaran ditutup jika kuota terpenuhi)</p>
-          <a href="https://wa.me/6282113463606" class="whatsapp-button">Hubungi Admin via WhatsApp</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq" style="background-color: var(--abu-muda);">
-    <div class="container">
-      <h2 class="section-title">Pertanyaan Umum (FAQ)</h2>
-      <div class="faq-content">
-        <details class="faq-item">
-          <summary>Bagaimana sistem pembayaran biaya pendidikan?</summary>
-          <div>Biaya pendidikan dapat dibayarkan per semester atau per tahun. Kami juga menyediakan program beasiswa
-            prestasi dan beasiswa bagi santri kurang mampu namun berpotensi tinggi.</div>
-        </details>
-        <details class="faq-item">
-          <summary>Apakah ada program ekstrakurikuler?</summary>
-          <div>Sangat banyak! Mulai dari tahfidz Al-Qur'an, kaligrafi, debat bahasa Arab/Inggris, robotik, olahraga,
-            seni, hingga kewirausahaan. Setiap santri wajib mengikuti minimal 2 ekstrakurikuler.</div>
-        </details>
-        <details class="faq-item">
-          <summary>Bagaimana komunikasi orang tua dengan santri?</summary>
-          <div>Orang tua dapat mengunjungi santri pada hari kunjungan yang ditentukan. Selain itu, kami menyediakan
-            aplikasi komunikasi khusus orang tua untuk memantau perkembangan akademik dan aktivitas santri.</div>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section id="testimonials">
-    <div class="container">
-      <h2 class="section-title">Testimoni Santri & Orang Tua</h2>
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <div class="testimonial-content">
-            <p>"Alhamdulillah, anak saya berkembang pesat di Nur Antika. Tidak hanya akademiknya yang meningkat, tapi
-              akhlaknya juga jauh lebih baik. Terima kasih atas bimbingan para ustadz dan ustadzah."</p>
-          </div>
-          <div class="testimonial-author">
-            <img src="https://placehold.co/60x60/0F3D2E/FFFFFF?text=SM" alt="Siti Maryam">
-            <div>
-              <h4>Siti Maryam</h4>
-              <p>Orang Tua Santri</p>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-content">
-            <p>"Pesantren ini benar-benar mencetak generasi Qurani. Saya berhasil hafal 5 juz dalam 2 tahun dan sekarang
-              kuliah di universitas ternama. Terima kasih Nur Antika!"</p>
-          </div>
-          <div class="testimonial-author">
-            <img src="https://placehold.co/60x60/C9A24D/0F3D2E?text=AH" alt="Ahmad Hasan">
-            <div>
-              <h4>Ahmad Hasan</h4>
-              <p>Alumni SMKIT</p>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-content">
-            <p>"Lingkungan pesantren yang sangat kondusif untuk belajar. Fasilitas lengkap, guru-guru kompeten, dan
-              program ekstrakurikuler yang beragam membuat saya betah di sini."</p>
-          </div>
-          <div class="testimonial-author">
-            <img src="https://placehold.co/60x60/0F3D2E/FFFFFF?text=FA" alt="Fatimah Azzahra">
-            <div>
-              <h4>Fatimah Azzahra</h4>
-              <p>Santri SMAIT</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Feedback Form -->
-      <div class="feedback-section">
-        <h3>Beri Feedback untuk Pesantren Nur Antika</h3>
-        <form id="feedbackForm" class="feedback-form">
-          <div class="form-group">
-            <label for="feedback-name">Nama Lengkap</label>
-            <input type="text" id="feedback-name" name="name" required>
-          </div>
-          <div class="form-group">
-            <label for="feedback-type">Jenis Pengguna</label>
-            <select id="feedback-type" name="type" required>
-              <option value="">Pilih Jenis</option>
-              <option value="Santri">Santri</option>
-              <option value="Orang Tua Santri">Orang Tua Santri</option>
-              <option value="Alumni">Alumni</option>
-              <option value="Lainnya">Lainnya</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="feedback-message">Pesan Feedback</label>
-            <textarea id="feedback-message" name="message" rows="4" required
-              placeholder="Tulis feedback Anda di sini..."></textarea>
-          </div>
-          <button type="submit" class="submit-button">Kirim Feedback</button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>Pondok Pesantren Nur Antika</h3>
-          <p>Jl. Cibalentung - Babakan, Pete, Kec. Tigaraksa, Kabupaten Tangerang, Banten 15720</p><br>
-          <div class="kontak-ikon">
-
-            <a href="tel:082113463606" title="Telepon">
-              <i class="fa-solid fa-phone"></i>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                Al-Mukhtar Generation
             </a>
-
-            <a href="https://wa.me/6282113463606" target="_blank" title="WhatsApp">
-              <i class="fa-brands fa-whatsapp"></i>
-            </a>
-
-            <a href="https://www.facebook.com/ponpes.nurantika.5?mibextid=ZbWKwL" target="_blank" title="Facebook">
-              <i class="fa-brands fa-facebook"></i>
-            </a>
-
-            <a href="https://www.instagram.com/ponpes_nurantika" target="_blank" title="Instagram">
-              <i class="fa-brands fa-instagram"></i>
-            </a>
-
-            <a href="https://www.youtube.com/@pondokpesantrennurantika2489/featured" target="_blank" title="YouTube">
-              <i class="fa-brands fa-youtube"></i>
-            </a>
-
-            <a href="https://www.tiktok.com/@official_nurantika" target="_blank" title="TikTok">
-              <i class="fa-brands fa-tiktok"></i>
-            </a>
-
-          </div>
-
+            <ul class="nav-menu">
+                <li><a href="#hero" class="nav-link">Beranda</a></li>
+                <li><a href="#slider-section" class="nav-link">Anggota</a></li>
+                <li><a href="#cerita" class="nav-link">Cerita</a></li>
+                <li><a href="#timeline" class="nav-link">Perjalanan</a></li>
+                <li><a href="#gallery" class="nav-link">Galeri</a></li>
+                <li><a href="#social" class="nav-link">Kontak</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
-        <div class="footer-section">
-          <h3>Link Cepat</h3>
-          <ul>
-            <li><a href="#home">Beranda</a></li>
-            <li><a href="#pendidikan">Jenjang Pendidikan</a></li>
-            <li><a href="#profil">Profil Pesantren</a></li>
-            <li><a href="#fasilitas">Fasilitas</a></li>
-            <li><a href="#pendaftaran">Pendaftaran</a></li>
-          </ul>
-        </div>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d833.7591514458081!2d106.46097355334292!3d-6.2572414794645965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e42069253ce9af1%3A0xf46adb6b44a0ddbf!2sPondok%20Pesantren%20Nur%20Antika!5e0!3m2!1sid!2sid!4v1767167537180!5m2!1sid!2sid"
-            width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </nav>
 
-      </div>
-      <div class="copyright">
-        &copy; 2025 Pondok Pesantren Nur Antika. All Rights Reserved.
-      </div>
+    <!-- Hero Section -->
+    <section id="hero" class="section">
+        <div class="particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        <div class="container">
+            <h1 class="fade-in">AL - MUKHTAR GENERATION</h1>
+            <p class="fade-in">“Bukan sekadar angkatan, tapi perjalanan hidup.”</p>
+            <div class="hero-buttons fade-in">
+                <button id="play-music" class="btn btn-primary">▶ Play Music</button>
+                <a href="#slider-section" class="btn">↓ Mulai Perjalanan</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slider Section -->
+    <section id="slider-section" class="section">
+        <div class="container">
+            <h2 class="text-center fade-in">Our</h2>
+            <div class="slider-wrapper">
+                <div class="slider-3d" id="photo-slider">
+                    <div class="slide-card"><img src="agil.jpg">
+                        <div class="member-name">Agil</div>
+                    </div>
+                    <div class="slide-card"><img src="alfa.jpg">
+                        <div class="member-name">Alfa</div>
+                    </div>
+                    <div class="slide-card"><img src="alfian.jpg">
+                        <div class="member-name">Alfian</div>
+                    </div>
+                    <div class="slide-card"><img src="aul.jpg">
+                        <div class="member-name">Aul</div>
+                    </div>
+                    <div class="slide-card"><img src="awan.jpg">
+                        <div class="member-name">Awan</div>
+                    </div>
+                    <div class="slide-card"><img src="bagus.jpg">
+                        <div class="member-name">Bagus</div>
+                    </div>
+                    <div class="slide-card"><img src="bilqis.jpg">
+                        <div class="member-name">Bilqis</div>
+                    </div>
+                    <div class="slide-card"><img src="damar.jpg">
+                        <div class="member-name">Damar</div>
+                    </div>
+                    <div class="slide-card"><img src="dandi.jpg">
+                        <div class="member-name">Dandi</div>
+                    </div>
+                    <div class="slide-card"><img src="fardhan.jpg">
+                        <div class="member-name">Fardhan</div>
+                    </div>
+                    <div class="slide-card"><img src="ghazali.jpg">
+                        <div class="member-name">Ghazali</div>
+                    </div>
+                    <div class="slide-card"><img src="icha.jpg">
+                        <div class="member-name">Icha</div>
+                    </div>
+                    <div class="slide-card"><img src="ilham.jpg">
+                        <div class="member-name">Ilham</div>
+                    </div>
+                    <div class="slide-card"><img src="labib.jpg">
+                        <div class="member-name">Labib</div>
+                    </div>
+                    <div class="slide-card"><img src="nabil.jpg">
+                        <div class="member-name">Nabil</div>
+                    </div>
+                    <div class="slide-card"><img src="pandu.jpg">
+                        <div class="member-name">Pandu</div>
+                    </div>
+                    <div class="slide-card"><img src="rara.jpg">
+                        <div class="member-name">Rara</div>
+                    </div>
+                    <div class="slide-card"><img src="riski.jpg">
+                        <div class="member-name">Riski</div>
+                    </div>
+                    <div class="slide-card"><img src="udin.jpg">
+                        <div class="member-name">Udin</div>
+                    </div>
+                    <div class="slide-card"><img src="wijdan.jpg">
+                        <div class="member-name">Wijdan</div>
+                    </div>
+                    <div class="slide-card"><img src="zaki.jpg">
+                        <div class="member-name">Zaki</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cerita Angkatan -->
+    <section id="cerita" class="section">
+        <div class="container">
+            <h2 class="text-center fade-in">Cerita Kami</h2>
+            <div class="story-card fade-in">
+                <span class="story-icon">🎓</span>
+                <p>Ingat hari pertama kita masuk? Gugup, bingung, tapi penuh harapan. Tak menyangka persahabatan ini
+                    akan menjadi pondasi yang tak tergoyahkan selama bertahun-tahun.</p>
+            </div>
+            <div class="story-card fade-in">
+                <span class="story-icon">👥</span>
+                <p>Dari tawa di kantin, begadang mengerjakan tugas, sampai saling menangis saat ujian gagal—kita
+                    melewatinya bersama. Setiap air mata dan tawa membentuk ikatan yang tak terlihat tapi kuat.</p>
+            </div>
+            <div class="story-card fade-in">
+                <span class="story-icon">🌳</span>
+                <p>Kita bukan hanya bertahan, tapi tumbuh. Dan di akhir perjalanan ini, kita bukan hanya lulusan—kita
+                    adalah keluarga.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <h2 class="text-center fade-in">Perjalanan Kami</h2>
+    <section id="timeline" class="section">
+        <div class="container">
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-counter">1</div>
+                        <h3>2019</h3>
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                        <p>Hari pertama masuk. Wajah asing, seragam baru, dan mimpi besar.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-counter">2</div>
+                        <h3>2023</h3>
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                        <p>Bersama melewati ujian pertama. Belajar arti kebersamaan.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-counter">3</div>
+                        <h3>2024</h3>
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                        <p>Acara tahunan pertama. Tawa, tarian, dan kenangan tak terlupakan.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-counter">4</div>
+                        <h3>2025</h3>
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                        <p>Ujian akhir. Saling mendukung, saling menguatkan.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-counter">5</div>
+                        <h3>2026</h3>
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                        <p>Wisuda. Air mata bahagia, pelukan terakhir, dan janji untuk tetap terhubung.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Penutup -->
+    <section id="penutup" class="section">
+        <div class="container">
+            <p class="fade-in">“Kita mungkin tidak selalu bersama,<br>tapi kenangan ini akan hidup selamanya.”</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="AlMukhtar.png" alt="Al-Mukhtar Logo" style="width: 60px;">
+                    <h3>Al-Mukhtar Generation 609</h3>
+                    <!-- Social Media -->
+                    <section id="social" class="section social-section">
+                        <h4>Tetap Terhubung :</h4><br>
+                        <div class="social-grid">
+
+                            <a href="https://www.instagram.com/almukhtar_update?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                                class="social-card icon-ig">
+                                <i class="fa-brands fa-instagram"></i>
+                                <span></span>
+                            </a>
+
+                            <a href="https://whatsapp.com/channel/0029Vaq6JP42UPBH4WlPHv0D" class="social-card icon-wa">
+                                <i class="fa-brands fa-whatsapp"></i>
+                                <span></span>
+                            </a>
+
+                            <a href="https://www.tiktok.com/@almukhtar_609?is_from_webapp=1&sender_device=pc"
+                                class="social-card icon-tk">
+                                <i class="fa-brands fa-tiktok"></i>
+                                <span></span>
+                            </a>
+
+                            <a href="#" class="social-card icon-mail">
+                                <i class="fa-solid fa-envelope"></i>
+                                <span></span>
+                            </a>
+
+                        </div>
+                    </section>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigasi</h4>
+                    <ul>
+                        <li><a href="#hero">Beranda</a></li>
+                        <li><a href="#slider-section">Anggota</a></li>
+                        <li><a href="#cerita">Cerita</a></li>
+                        <li><a href="#timeline">Perjalanan</a></li>
+                        <li><a href="#gallery">Galeri</a></li>
+                        <li><a href="#social">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Kontak</h4>
+                    <p>Email: info@almukhtar609.com</p>
+                    <p>Telepon: +62 882 1448 6502</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Al-Mukhtar Generation 609. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal" id="image-modal">
+        <span class="close-modal">&times;</span>
+        <button class="modal-nav prev">
+            < <button class="modal-nav next">>
+        </button>
+        <div class="modal-content">
+            <img id="modal-img" src="" alt="Kenangan">
+        </div>
     </div>
-  </footer>
 
-  <!-- Loading Screen -->
-  <div class="loading">
-    <div class="spinner"></div>
-  </div>
+    <script>
+        // Fade-in on scroll
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
 
-  <script>
-    // Hamburger menu toggle
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
 
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
 
-    // Close menu when clicking on a link
-    navLinks.addEventListener('click', (e) => {
-      if (e.target.tagName === 'A') {
-        navLinks.classList.remove('active');
-      }
-    });
 
-    // Loading animation
-    window.addEventListener('load', () => {
-      const loading = document.querySelector('.loading');
-      loading.classList.add('hidden');
-    });
+        const slider = document.getElementById('photo-slider');
+        const cards = document.querySelectorAll('.slide-card');
 
-    // Scroll animations
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
+        let current = Math.floor(cards.length / 2);
+        let startX = 0;
+        let currentX = 0;
+        let isDragging = false;
+        let autoSlideInterval;
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate');
+        /* ===== UPDATE POSISI CARD ===== */
+        function updateCarousel(offset = 0) {
+            cards.forEach((card, index) => {
+                const diff = index - current + offset;
+
+                const translateX = diff * 280;
+                const translateZ = Math.abs(diff) * -120;
+                const rotateY = diff * -25;
+                const opacity = Math.abs(diff) > 2 ? 0 : 1;
+                const brightness = Math.max(0.3, 1 - Math.abs(diff) * 0.4); // Lighting effect: brighter for closer cards
+
+                card.style.transform = `
+      translateX(${translateX}px)
+      translateZ(${translateZ}px)
+      rotateY(${rotateY}deg)
+    `;
+                card.style.opacity = opacity;
+                card.style.filter = `brightness(${brightness})`;
+            });
         }
-      });
-    }, observerOptions);
 
-    // Observe elements for animation
-    document.querySelectorAll('.animate-on-scroll, .slide-left, .slide-right').forEach(el => {
-      observer.observe(el);
-    });
+        updateCarousel();
 
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
+        /* ===== DESKTOP DRAG ===== */
+        slider.addEventListener('mousedown', e => {
+            startX = e.clientX;
+            isDragging = true;
+            slider.style.cursor = 'grabbing';
+        });
+
+        window.addEventListener('mousemove', e => {
+            if (!isDragging) return;
+            currentX = e.clientX;
+            const delta = (currentX - startX) / 120;
+            updateCarousel(delta);
+        });
+
+        window.addEventListener('mouseup', () => {
+            if (!isDragging) return;
+            isDragging = false;
+            slider.style.cursor = 'grab';
+
+            const delta = currentX - startX;
+            if (delta > 80 && current > 0) current--;
+            if (delta < -80 && current < cards.length - 1) current++;
+
+            updateCarousel();
+        });
+
+        /* ===== MOBILE SWIPE ===== */
+        slider.addEventListener('touchstart', e => {
+            startX = e.touches[0].clientX;
+        });
+
+        slider.addEventListener('touchmove', e => {
+            currentX = e.touches[0].clientX;
+            const delta = (currentX - startX) / 120;
+            updateCarousel(delta);
+        });
+
+        slider.addEventListener('touchend', () => {
+            const delta = currentX - startX;
+
+            if (delta > 80 && current > 0) current--;
+            if (delta < -80 && current < cards.length - 1) current++;
+
+            updateCarousel();
+        });
+
+        /* ===== AUTO SLIDE (UNTUK MUSIK) ===== */
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(() => {
+                current = (current + 1) % cards.length;
+                updateCarousel();
+            }, 3500);
         }
-      });
-    });
 
-    // Tab functionality for pendaftaran section
-    const pendaftaranTabs = document.querySelectorAll('.pendaftaran-tab');
-    const pendaftaranContents = document.querySelectorAll('.pendaftaran-tab-content');
-
-    pendaftaranTabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        // Remove active class from all tabs
-        pendaftaranTabs.forEach(t => t.classList.remove('active'));
-        // Add active class to clicked tab
-        tab.classList.add('active');
-
-        // Hide all tab contents
-        pendaftaranContents.forEach(content => content.classList.remove('active'));
-
-        // Show the corresponding tab content
-        const tabId = tab.getAttribute('data-tab');
-        document.getElementById(tabId).classList.add('active');
-      });
-    });
-
-    // Pendaftaran form submission
-    const pendaftaranForm = document.getElementById('pendaftaranForm');
-    pendaftaranForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      // Get form data
-      const formData = new FormData(this);
-      const data = Object.fromEntries(formData);
-
-      // Basic validation for required fields
-      const requiredFields = ['nama-lengkap', 'tempat-lahir', 'tanggal-lahir', 'jenis-kelamin', 'agama', 'alamat', 'no-telepon', 'nama-ayah', 'nama-ibu', 'sekolah-asal', 'kelas', 'alasan'];
-      let isValid = true;
-      let missingFields = [];
-
-      requiredFields.forEach(field => {
-        if (!data[field] || data[field].trim() === '') {
-          isValid = false;
-          missingFields.push(field);
+        function stopAutoSlide() {
+            clearInterval(autoSlideInterval);
         }
-      });
 
-      if (!isValid) {
-        alert('Mohon lengkapi semua field yang wajib diisi: ' + missingFields.join(', '));
-        return;
-      }
+        /* ===== HUBUNGKAN DENGAN MUSIK ===== */
+        const audio = document.getElementById('bg-music');
+        const playBtn = document.getElementById('play-music');
+        let musicPlaying = false;
 
-      // Email validation (if email field is added later)
-      // const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      // if (data.email && !emailRegex.test(data.email)) {
-      //   alert('Mohon masukkan alamat email yang valid.');
-      //   return;
-      // }
+        playBtn.onclick = () => {
+            if (!musicPlaying) {
+                audio.play();
+                playBtn.textContent = '⏸ Stop Music';
+                startAutoSlide();
+                musicPlaying = true;
+            } else {
+                audio.pause();
+                stopAutoSlide();
+                playBtn.textContent = '▶ Play Music';
+                musicPlaying = false;
+            }
+        };
 
-      // Simulate form submission (replace with actual submission logic)
-      alert('Terima kasih! Formulir pendaftaran Anda telah dikirim. Kami akan segera menghubungi Anda untuk proses selanjutnya.');
+        /* ===== PAUSE ON HOVER ===== */
+        slider.addEventListener('mouseenter', () => {
+            if (musicPlaying) {
+                stopAutoSlide();
+            }
+        });
 
-      // Reset form
-      this.reset();
-    });
+        slider.addEventListener('mouseleave', () => {
+            if (musicPlaying) {
+                startAutoSlide();
+            }
+        });
 
-    // Contact form submission
-    const contactForm = document.getElementById('contactForm');
-    contactForm.addEventListener('submit', function (e) {
-      e.preventDefault();
+        /* ===== NAVIGATION FUNCTIONALITY ===== */
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
 
-      // Get form data
-      const formData = new FormData(this);
-      const data = Object.fromEntries(formData);
+        // Mobile menu toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
 
-      // Basic validation
-      if (!data.name || !data.email || !data.subject || !data.message) {
-        alert('Mohon lengkapi semua field yang wajib diisi.');
-        return;
-      }
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
 
-      // Email validation
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(data.email)) {
-        alert('Mohon masukkan alamat email yang valid.');
-        return;
-      }
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                navToggle.classList.remove('active');
+            });
+        });
 
-      // Simulate form submission (replace with actual submission logic)
-      alert('Terima kasih! Pesan Anda telah dikirim. Kami akan segera menghubungi Anda.');
+        // Gallery Modal Functionality
+        const modal = document.getElementById('image-modal');
+        const modalImg = document.getElementById('modal-img');
+        const closeModal = document.querySelector('.close-modal');
+        const prevBtn = document.querySelector('.modal-nav.prev');
+        const nextBtn = document.querySelector('.modal-nav.next');
+        const galleryItems = document.querySelectorAll('.gallery-item');
 
-      // Reset form
-      this.reset();
-    });
+        let currentImageIndex = 0;
+        const images = Array.from(galleryItems).map(item => item.getAttribute('data-img'));
 
-    // Feedback form submission
-    const feedbackForm = document.getElementById('feedbackForm');
-    feedbackForm.addEventListener('submit', function (e) {
-      e.preventDefault();
+        // Open modal
+        galleryItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                currentImageIndex = index;
+                modalImg.src = images[currentImageIndex];
+                modal.classList.add('active');
+            });
+        });
 
-      // Get form data
-      const formData = new FormData(this);
-      const data = Object.fromEntries(formData);
+        // Close modal
+        closeModal.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
 
-      // Basic validation
-      if (!data.name || !data.type || !data.message) {
-        alert('Mohon lengkapi semua field yang wajib diisi.');
-        return;
-      }
+        // Close modal when clicking outside
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
 
-      // Create new testimonial card
-      const testimonialsGrid = document.querySelector('.testimonials-grid');
-      const newTestimonial = document.createElement('div');
-      newTestimonial.className = 'testimonial-card';
+        // Navigate images
+        prevBtn.addEventListener('click', () => {
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            modalImg.src = images[currentImageIndex];
+        });
 
-      // Generate placeholder image based on type
-      let placeholderText = 'FB'; // Default
-      if (data.type === 'Santri') placeholderText = 'ST';
-      else if (data.type === 'Orang Tua Santri') placeholderText = 'OT';
-      else if (data.type === 'Alumni') placeholderText = 'AL';
+        nextBtn.addEventListener('click', () => {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            modalImg.src = images[currentImageIndex];
+        });
 
-      newTestimonial.innerHTML = `
-        <div class="testimonial-content">
-          <p>"${data.message}"</p>
-        </div>
-        <div class="testimonial-author">
-          <img src="https://placehold.co/60x60/0F3D2E/FFFFFF?text=${placeholderText}" alt="${data.name}">
-          <div>
-            <h4>${data.name}</h4>
-            <p>${data.type}</p>
-          </div>
-        </div>
-      `;
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (!modal.classList.contains('active')) return;
 
-      // Add animation delay
-      const existingCards = testimonialsGrid.querySelectorAll('.testimonial-card').length;
-      newTestimonial.style.animationDelay = `${(existingCards + 1) * 0.1}s`;
+            if (e.key === 'ArrowLeft') {
+                prevBtn.click();
+            } else if (e.key === 'ArrowRight') {
+                nextBtn.click();
+            } else if (e.key === 'Escape') {
+                modal.classList.remove('active');
+            }
+        });
+    </script>
 
-      // Append to grid
-      testimonialsGrid.appendChild(newTestimonial);
-
-      // Success message
-      alert('Terima kasih atas feedback Anda! Testimoni telah ditambahkan.');
-
-      // Reset form
-      this.reset();
-    });
-
-    // Back to Top Button functionality
-    const backToTopButton = document.getElementById('backToTop');
-
-    window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 300) {
-        backToTopButton.classList.add('show');
-      } else {
-        backToTopButton.classList.remove('show');
-      }
-    });
-
-    backToTopButton.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    });
-  </script>
-  <script>
-    document.getElementById("feedbackForm").addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      const nama = document.getElementById("feedback-name").value;
-      const jenis = document.getElementById("feedback-type").value;
-      const pesan = document.getElementById("feedback-message").value;
-
-      const waMessage = `
-*FEEDBACK PESANTREN NUR ANTIKA*
-
-Nama: ${nama}
-Jenis Pengguna: ${jenis}
-
-Pesan:
-${pesan}
-  `;
-
-      const nomorAdmin = "6288214486502"; // GANTI nomor WA admin
-      const waURL = `https://wa.me/${nomorAdmin}?text=${encodeURIComponent(waMessage)}`;
-
-      window.open(waURL, "_blank");
-
-      // optional: reset form
-      document.getElementById("feedbackForm").reset();
-    });
-  </script>
-
-  <!-- Floating WhatsApp -->
-  <a href="https://wa.me/6282113463606" class="wa-float" target="_blank" title="Chat WhatsApp">
-    <i class="fa-brands fa-whatsapp"></i>
-  </a>
-
-  <!-- Back to Top Button -->
-  <button class="back-to-top" id="backToTop" title="Kembali ke Atas">
-    <i class="fas fa-arrow-up"></i>
-  </button>
-
-</body>
-
-</html>
 
 </body>
 
